@@ -35,13 +35,30 @@ const Footer = () => {
       <section>
         {
           data && data.records.map( f =>
-          <div>
-            
+          <div key={f.id}>
+            {/**Displaying the logo image */}
+          
           </div>
             
           )
         }
       </section>
+      <div>
+        <h3>NYTTIGE LINKS</h3>
+        <div>
+          <h4>Galleri</h4>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+        </div>
+      </div>
+
+      <div>
+        <h4>KONTAKT os</h4>
+        <p>Address</p>
+        <p>telephone number</p>
+        <p>email-address</p>
+      </div>
    
       
       <div className="flex justify-between items-center mx-40">
@@ -49,9 +66,9 @@ const Footer = () => {
            <p> © 2023 Gjerrild vandrerhjem. All Rights Reserved.</p>
         </div>
         <div className='flex space-x-4'>
-          <p className='text-indigo-700 text-xl'><TiSocialFacebook /></p>
+          <p className='text-indigo-700 text-xl'><TiSocialFacebook size="2em" /></p>
           <p className='text-red-700 text-xl'>
-          <SlSocialInstagram />
+          <SlSocialInstagram size="2em" />
           </p>
         
           </div>
