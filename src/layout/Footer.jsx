@@ -1,10 +1,49 @@
-import React from 'react'
+import React, { useEffect,useState }from 'react'
+
+import useRequestData from '../hooks/useRequestData';
+
+import Loader from '../components/Loader';
+
 import { TiSocialFacebook } from "react-icons/ti";
 import { SlSocialInstagram } from "react-icons/sl";
 
 const Footer = () => {
+
+  const {data, isLoading, error, makeRequest} = useRequestData();
+
+//useEffect for GET REQUEST
+
+  useEffect(()=> {
+    makeRequest("https://api.airtable.com/v0/appdVuqpV8gkE6Oz1/footer", 
+    "GET", null,
+    {
+      'Authorization': "Bearer " + import.meta.env.VITE_APP_AIRTABLESHOPPING_TOKEN
+    } )
+  }, [  ])
+
+  
+
   return (
+
     <footer className='bg-gray-100 p-4'>
+
+
+      {isLoading && <Loader />}
+
+      { error && <h2 className='text-red-600'> Error...</h2>}
+
+      <section>
+        {
+          data && data.records.map( f =>
+          <div>
+            
+          </div>
+            
+          )
+        }
+      </section>
+   
+      
       <div className="flex justify-between items-center mx-40">
         <div>
            <p> © 2023 Gjerrild vandrerhjem. All Rights Reserved.</p>
