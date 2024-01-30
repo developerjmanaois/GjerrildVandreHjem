@@ -4,15 +4,12 @@ import useRequestData from '../hooks/useRequestData';
 
 import Loader from '../components/Loader';
 
-import { useParams, Link } from 'react-router-dom'
-
 import { TiSocialFacebook } from "react-icons/ti";
 import { SlSocialInstagram } from "react-icons/sl";
-import { IoCallSharp } from "react-icons/io5";
+
 
 import { FiMapPin } from "react-icons/fi";
 
-// import LeafletMap from '../components/LeafletMap'
 
 
 
@@ -36,10 +33,7 @@ const Footer = () => {
     } )
   }, [  ])
 
-//   useEffect(()=> {
-//     makeRequest("http://api.openweathermap.org/data/2.5/air_pollution?lat=" + lat + "&lon=" + lon + 
-//     "&appid=5311ce785dd3de9b291799095104c1bf")
-// }, [ lat, lon ])
+
   
 
   return (
@@ -101,21 +95,12 @@ const Footer = () => {
           />
           
           )}
-{/* 
-          {data?.records?.[4]?.fields.image && (
-             <img 
-             src={data.records[4].fields.image[0].url} 
-             alt="Gjerrild Vandrerhjem Logo" 
-             className="w-12 h-auto"
-           />
-          )} */}
 
        
         </div>
 
 <div>
-          {/* Leaflet Map */}
-          {/* <LeafletMap /> */}
+      
         </div>
   
         </div>
