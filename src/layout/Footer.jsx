@@ -12,11 +12,7 @@ import { IoCallSharp } from "react-icons/io5";
 
 import { FiMapPin } from "react-icons/fi";
 
-import LeafletMap from '../components/LeafletMap'
-
-
-
-
+// import LeafletMap from '../components/LeafletMap'
 
 
 
@@ -24,6 +20,7 @@ import LeafletMap from '../components/LeafletMap'
 const Footer = () => {
 
   const {data, isLoading, error, makeRequest} = useRequestData();
+ 
 
   const [lat, setLat]=useState(57)
   const [ lon, setLon ] = useState(10)
@@ -39,16 +36,17 @@ const Footer = () => {
     } )
   }, [  ])
 
-  useEffect(()=> {
-    makeRequest("http://api.openweathermap.org/data/2.5/air_pollution?lat=" + lat + "&lon=" + lon + 
-    "&appid=5311ce785dd3de9b291799095104c1bf")
-}, [ lat, lon ])
+//   useEffect(()=> {
+//     makeRequest("http://api.openweathermap.org/data/2.5/air_pollution?lat=" + lat + "&lon=" + lon + 
+//     "&appid=5311ce785dd3de9b291799095104c1bf")
+// }, [ lat, lon ])
   
 
   return (
 
     <footer className="bg-gray-800 text-gray-200 p-4 md:p-6">
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
       {/* Column 1: Contact and Social Media */}
       <div>
         <h3 className='text-lg md:text-xl font-semibold mb-2'>Kontakt Os</h3>
@@ -83,22 +81,47 @@ const Footer = () => {
           </div>
           {/* Link to Reviews */}
      
-<a 
-  href="https://dk.trustpilot.com/review/www.gjerrild-kro.dk" // Replace with your actual review page URL
-  className="text-blue-400 hover:text-blue-500"
-  target="_blank" 
-  rel="noopener noreferrer"
->
-  Read Our Reviews
-</a>
+              <a 
+                href="https://dk.trustpilot.com/review/www.gjerrild-kro.dk" // Replace with your actual review page URL
+                className="text-blue-400 hover:text-blue-500"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Read Our Reviews
+            </a>
+
+            {/* Column 4: Control Report, Certificates, Gjerrild Logo */}
+            <div>
+          {/* Control Report Smiley */}
+          {data?.records?.[2]?.fields.image && (
+            <img 
+            src={data.records[3].fields.image[0].url} 
+            alt="Certificate" 
+            className="w-12 h-auto"
+          />
+          
+          )}
+{/* 
+          {data?.records?.[4]?.fields.image && (
+             <img 
+             src={data.records[4].fields.image[0].url} 
+             alt="Gjerrild Vandrerhjem Logo" 
+             className="w-12 h-auto"
+           />
+          )} */}
+
+       
+        </div>
 
 <div>
           {/* Leaflet Map */}
-          <LeafletMap />
+          {/* <LeafletMap /> */}
         </div>
   
         </div>
-      </div>
+   </div>
+
+   
   
     {/* Footer Bottom */}
     <div className="flex flex-col md:flex-row justify-between items-center mt-4">
