@@ -8,6 +8,7 @@ const Navbar = () => {
   const [language, setLanguage] = useState('en');
   const [selectedCurrency, setSelectedCurrency] = useState('DKK');
 
+
   return (
     <div className='flex justify-between max-w-5xl mx-auto items-center py-6'>
       <div>

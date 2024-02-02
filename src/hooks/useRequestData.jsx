@@ -8,13 +8,20 @@ const useRequestData = () => {
     const [ data, setData ] = useState( null );
     const [ error, setError ] = useState( null );
 
+
     const makeRequest = async ( apiurl, method = "GET", bodydata = null, headers = null, params = null ) => {
+
+    //Kalder API MED GET, POST, PUT, PATCH
+
+    const makeRequest = async ( apiurl, method="GET", bodydata = null, headers = null, params = null ) => {
+
 
         setisLoading( true )
 
             try {
 
                 let response
+
 
                 switch ( method ) {
 
@@ -41,9 +48,37 @@ const useRequestData = () => {
                         default:
                         throw new Error ( "Invalid method- GET, POST, PATCH, DELETE was expected" )
                 }
+=======
+                switch(method) {
+                    case "GET":
+                    response = await axios.get( apiurl, { headers: headers, body : null, params:params } );
+                    break;
+
+                    case "POST":
+                        response = await axios.post(apiurl, bodydata, { headers,params })
+                        break;
+          
+                        case "PUT":
+                          response = await axios.put(apiurl, bodydata,  { headers,params })
+                          break
+          
+                          case "PATCH":
+                            response = await axios.patch(apiurl, bodydata, { headers,params } )
+                            break
+          
+                            case "DELETE":
+                              response = await axios.delete(apiurl, { headers,params })
+                              break
+          
+                              default: 
+                              throw new Error ("Invalid method- GET, POST ,PATCH ,DELETE  was expected")
+                
+                }
+             
+
+
 
                 if ( response.data ) {
-
                     setData( response.data )
                     setError( null )
 
