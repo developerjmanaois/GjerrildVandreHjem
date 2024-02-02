@@ -50,6 +50,41 @@ const Navbar = () => {
                                 Kontakt
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/aktiviteter" className='hover:text-gray-200' >
+                                Aktiviteter
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/kattegatcentret" className='hover:text-gray-200' >
+                             Kattegatcentret
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/djurssommerland" className='hover:text-gray-200' >
+                            Djurssommerland
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/gjerrildnordstrand" className='hover:text-gray-200' >
+                            GjerrildNordstrand
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/nationalpark" className='hover:text-gray-200' >
+                            Nationalpark
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/reepark" className='hover:text-gray-200' >
+                           Reepark
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/skandinavisk" className='hover:text-gray-200' >
+                           Skandinavisk
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
                 <div className="navbar-end">
