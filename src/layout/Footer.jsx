@@ -3,6 +3,7 @@ import useRequestData from '../hooks/useRequestData';
 import Loader from '../components/Loader';
 import { TiSocialFacebook } from "react-icons/ti";
 import { SlSocialInstagram } from "react-icons/sl";
+import { LuPhone } from "react-icons/lu";
 import { FiMapPin } from "react-icons/fi";
 
 
