@@ -35,7 +35,7 @@ const Contact = () => {
           name="name" 
           value={formData.name}
           onChange={handleChange} 
-          placeholder="Your Name" 
+          placeholder="Din Navn" 
           required 
           className='w-full p-2 mt-2 border border-gray-300 rounded'
         />
@@ -45,7 +45,7 @@ const Contact = () => {
           name="email" 
           value={formData.email}
           onChange={handleChange} 
-          placeholder="Your Email" 
+          placeholder="Din Email" 
           required 
           className='w-full p-2 mt-2 border border-gray-300 rounded'
           
@@ -55,7 +55,7 @@ const Contact = () => {
           name="message" 
           value={formData.message}
           onChange={handleChange} 
-          placeholder="Your Message" 
+          placeholder="Din Besked" 
           required 
           className='w-full p-2 mt-2 border border-gray-300 rounded's
         />

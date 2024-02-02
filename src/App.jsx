@@ -10,7 +10,7 @@ import Layout from './layout/Layout'
 import LayoutAdmin from './Layout/ADMIN/LayoutAdmin'
 import HomeAdmin from './views/ADMIN/HomeAdmin'
 import News from './views/News';
-import MailList from './layout/mailList/MailList';
+import Aktiviteter from './views/Aktiviteter';
 
 
 function App () {
@@ -37,7 +37,7 @@ function App () {
         </Route>
 
            {/* ---------------- mailist ---------------- */ }
-           <Route path="maillist" element={ <MailList /> } />
+           <Route path="aktiviteter" element={ <Aktiviteter /> } />
       </>
     )
   )

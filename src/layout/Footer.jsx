@@ -39,11 +39,19 @@ const Footer = () => {
   return (
 
     <footer className="bg-gray-800 text-gray-200 p-4 md:p-6">
+        <div className='w-full mt-12 bg-gray-900 text-white flex flex-col items-center gap-5 p-12'>
+          <h1 className="text-lg md:text-xl font-semibold">Spar tid, spar penge!</h1>
+          <span className='text-base'>Tilmeld dig, så sender vi de bedste tilbud til dig</span>
+          <div className="flex items-center gap-2">
+            <input type="email" placeholder='Din Email' className='w-72 h-8 p-2 border-none mr-2 rounded-md text-gray-700'/>
+            <button className='h-12 px-4 bg-blue-500 hover:bg-blue-600 text-white font-medium border-none rounded-md cursor-pointer'>Abonnere</button>
+        </div>
+  </div>
       
     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
       {/* Column 1: Contact and Social Media */}
       <div>
-        <h3 className='text-lg md:text-xl font-semibold mb-2'>Kontakt Os</h3>
+        <h3 className='text-lg md:text-l font-semibold mb-2'>Kontakt Os</h3>
         <div className='flex items-center mb-2'>
           <FiMapPin className='text-xl text-red-500 mr-2' /> {/* Adjust icon size as needed */}
           <a href={mapLink} target="_blank" rel="noopener noreferrer" className='not-italic hover:underline'>
@@ -58,13 +66,13 @@ const Footer = () => {
     
       {/* Column 2: Booking Information */}
       <div>
-        <h3 className='text-lg md:text-xl font-semibold mb-2'>Book Ophold</h3>
+        <h3 className='text-lg md:text-l font-semibold mb-2'>Book Ophold</h3>
         <a href="mailto:booking@gjerrildvandrerhjem.dk" className="text-blue-400 hover:text-blue-500">booking@gjerrildvandrerhjem.dk</a>
       </div>
   
       {/* Column 3: Logo and Review Link */}
       <div>
-          <h3 className='text-lg md:text-xl font-semibold mb-2'>Travelers' Choice</h3>
+          <h3 className='text-lg md:text-l font-semibold mb-2'>Travelers' Choice</h3>
           <div className='mb-4'>
             {data && data.records && data.records[1] && data.records[1].fields.image && (
               <img
@@ -83,7 +91,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                Read Our Reviews
+                Læse vores anmeldelser
             </a>
 
             {/* Column 4: Control Report, Certificates, Gjerrild Logo */}
@@ -107,14 +115,7 @@ const Footer = () => {
   
         </div>
    </div>
-   <div className='w-full mt-12 bg-gray-900 text-white flex flex-col items-center gap-5 p-12'>
-    <h1 className="text-lg md:text-xl font-semibold">Spar tid, spar penge!</h1>
-    <span className='text-base'>Tilmeld dig, så sender vi de bedste tilbud til dig</span>
-    <div className="flex items-center gap-2">
-      <input type="email" placeholder='Your Email' className='w-72 h-8 p-2 border-none mr-2 rounded-md text-gray-700'/>
-      <button className='h-12 px-4 bg-blue-500 hover:bg-blue-600 text-white font-medium border-none rounded-md cursor-pointer'>Subscribe</button>
-    </div>
-  </div>
+ 
   
     {/* Footer Bottom */}
     <div className="flex flex-col md:flex-row justify-between items-center mt-4">
