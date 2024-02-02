@@ -11,8 +11,10 @@ const About = () => {
 
   const [aboutData, setAboutData] = useState(null);
 
+  const [ natureImages, setNatureImages ] = useState([]);
+
  
-  //useEffect for GET REQUEST
+  //useEffect for GET REQUEST for About Us(owner)
 
   useEffect(()=> {
     makeRequest("https://api.airtable.com/v0/appdVuqpV8gkE6Oz1/About_Us", 
@@ -21,6 +23,7 @@ const About = () => {
       'Authorization': "Bearer " + import.meta.env.VITE_APP_AIRTABLESHOPPING_TOKEN
     } )
   }, [])
+;
 
 
 

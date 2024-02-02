@@ -17,12 +17,12 @@ import { FiMapPin } from "react-icons/fi";
 const Footer = () => {
 
   const {data, isLoading, error, makeRequest} = useRequestData();
+
+  // URL encode the address
+  const address = "Dyrehavevej 9, Grenå";
+  const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+
  
-
-  const [lat, setLat]=useState(57)
-  const [ lon, setLon ] = useState(10)
-
-
 //useEffect for GET REQUEST
 
   useEffect(()=> {
@@ -46,11 +46,13 @@ const Footer = () => {
         <h3 className='text-lg md:text-xl font-semibold mb-2'>Kontakt Os</h3>
         <div className='flex items-center mb-2'>
           <FiMapPin className='text-xl text-red-500 mr-2' /> {/* Adjust icon size as needed */}
-          <address className='not-italic'>
-            Dyrehavevej 9, Grenå
-          </address>
+          <a href={mapLink} target="_blank" rel="noopener noreferrer" className='not-italic hover:underline'>
+        {address}
+      </a>
         </div> 
-        <p className='mb-2'>+4540224199</p>
+        <p className='mb-2'>
+        <a href="tel:+4540224199">+4540224199</a>
+        </p>
         <a href="mailto:info@gjerrildvandrerhjem.dk">info@gjerrildvandrerhjem.dk</a>
       </div>
     
@@ -105,15 +107,25 @@ const Footer = () => {
   
         </div>
    </div>
-
-   
+   <div className='w-full mt-12 bg-gray-900 text-white flex flex-col items-center gap-5 p-12'>
+    <h1 className="text-lg md:text-xl font-semibold">Spar tid, spar penge!</h1>
+    <span className='text-base'>Tilmeld dig, så sender vi de bedste tilbud til dig</span>
+    <div className="flex items-center gap-2">
+      <input type="email" placeholder='Your Email' className='w-72 h-8 p-2 border-none mr-2 rounded-md text-gray-700'/>
+      <button className='h-12 px-4 bg-blue-500 hover:bg-blue-600 text-white font-medium border-none rounded-md cursor-pointer'>Subscribe</button>
+    </div>
+  </div>
   
     {/* Footer Bottom */}
     <div className="flex flex-col md:flex-row justify-between items-center mt-4">
-      <p className='text-xs md:text-sm'>© 2023 Gjerrild Vandrerhjem. All Rights Reserved.</p>
+      <p className='text-xs md:text-sm'>© 2024 Gjerrildvandrehjem™.com. All rights reserved.</p>
       <div className='flex space-x-2 md:space-x-4 mt-2 md:mt-0'>
-        <TiSocialFacebook className='text-2xl md:text-3xl text-blue-600' /> {/* Adjust icon size as needed */}
-        <SlSocialInstagram className='text-2xl md:text-3xl text-pink-600' />
+        <a href="https://www.facebook.com/people/Danhostel-Gjerrild-Vandrerhjem/100085306731927/" target="_blank" rel="noopener noreferrer" className='text-2xl md:text-3xl text-blue-600'>
+          <TiSocialFacebook />
+        </a>
+        <a href="https://www.instagram.com/gjerrildvandrerhjem.dk/" target="_blank" rel="noopener noreferrer" className='text-2xl md:text-3xl text-pink-600'>
+          <SlSocialInstagram />
+         </a>
       </div>
     </div>
   </footer>

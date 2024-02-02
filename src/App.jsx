@@ -10,6 +10,7 @@ import Layout from './layout/Layout'
 import LayoutAdmin from './Layout/ADMIN/LayoutAdmin'
 import HomeAdmin from './views/ADMIN/HomeAdmin'
 import News from './views/News';
+import MailList from './layout/mailList/MailList';
 
 
 function App () {
@@ -34,6 +35,9 @@ function App () {
           <Route index element={ <HomeAdmin /> } />
           <Route path="*" element={ <NoMatch /> } />
         </Route>
+
+           {/* ---------------- mailist ---------------- */ }
+           <Route path="maillist" element={ <MailList /> } />
       </>
     )
   )
