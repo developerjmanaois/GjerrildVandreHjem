@@ -1,17 +1,9 @@
 import React, { useEffect,useState }from 'react'
-
 import useRequestData from '../hooks/useRequestData';
-
 import Loader from '../components/Loader';
-
 import { TiSocialFacebook } from "react-icons/ti";
 import { SlSocialInstagram } from "react-icons/sl";
-
-
 import { FiMapPin } from "react-icons/fi";
-
-
-
 
 
 const Footer = () => {
@@ -29,27 +21,21 @@ const Footer = () => {
     makeRequest("https://api.airtable.com/v0/appdVuqpV8gkE6Oz1/footer", 
     "GET", null,
     {
-      'Authorization': "Bearer " + import.meta.env.VITE_APP_AIRTABLESHOPPING_TOKEN
+      'Authorization': "Bearer " + import.meta.env.VITE_APP_AIRTABLEAPIKEY
     } )
   }, [  ])
 
-
-  
-
   return (
 
-    <footer className="bg-gray-800 text-gray-200 p-4 md:p-6">
-        <div className='w-full mt-12 bg-gray-900 text-white flex flex-col items-center gap-5 p-12'>
-          <h1 className="text-lg md:text-xl font-semibold">Spar tid, spar penge!</h1>
-          <span className='text-base'>Tilmeld dig, så sender vi de bedste tilbud til dig</span>
-          <div className="flex items-center gap-2">
-            <input type="email" placeholder='Din Email' className='w-72 h-8 p-2 border-none mr-2 rounded-md text-gray-700'/>
-            <button className='h-12 px-4 bg-blue-500 hover:bg-blue-600 text-white font-medium border-none rounded-md cursor-pointer'>Abonnere</button>
-        </div>
-  </div>
+    <footer className="text-gray-200 p-4 md:p-6">
       
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-screen-lg mx-auto">
       {/* Column 1: Contact and Social Media */}
+      <div>
+        <div>
+          <img src="assets/Billeder/Galleri/NewLogo.png" alt="" className='w-36'/>
+        </div>
+      </div>
       <div>
         <h3 className='text-lg md:text-l font-semibold mb-2'>Kontakt Os</h3>
         <div className='flex items-center mb-2'>
@@ -85,14 +71,9 @@ const Footer = () => {
           </div>
           {/* Link to Reviews */}
      
-              <a 
-                href="https://dk.trustpilot.com/review/www.gjerrild-kro.dk" // Replace with your actual review page URL
-                className="text-blue-400 hover:text-blue-500"
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
+              <a href="#" className="text-blue-400 hover:text-blue-500">
                 Læse vores anmeldelser
-            </a>
+              </a>
 
             {/* Column 4: Control Report, Certificates, Gjerrild Logo */}
             <div>
@@ -119,7 +100,9 @@ const Footer = () => {
   
     {/* Footer Bottom */}
     <div className="flex flex-col md:flex-row justify-between items-center mt-4">
-      <p className='text-xs md:text-sm'>© 2024 Gjerrildvandrehjem™.com. All rights reserved.</p>
+      <div>
+        <p className='text-xs md:text-sm'>© 2024 Gjerrildvandrehjem™.com. All rights reserved.</p>
+      </div>
       <div className='flex space-x-2 md:space-x-4 mt-2 md:mt-0'>
         <a href="https://www.facebook.com/people/Danhostel-Gjerrild-Vandrerhjem/100085306731927/" target="_blank" rel="noopener noreferrer" className='text-2xl md:text-3xl text-blue-600'>
           <TiSocialFacebook />
