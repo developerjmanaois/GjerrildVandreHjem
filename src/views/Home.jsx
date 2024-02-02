@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
-import "/node_modules/flag-icons/css/flag-icons.min.css";
+import Header from '../components/pageheader/Header'
+import Section from '../components/pagesection/Section'
+import Galleri from '../components/galleri/Galleri'
 
 
 const Home = () => {
 
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-
   return (
 
     <section>
-
-      
+      <Header />
+      <Section />
+      <Galleri />
     </section>
   )
 }

@@ -1,0 +1,61 @@
+{
+    "currencies": [
+      {
+        "code": "DKK",
+        "name": "Danish Crown",
+        "symbol": "DKK"
+      },
+      {
+        "code": "USD",
+        "name": "United States Dollar",
+        "symbol": "$"
+      },
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€"
+      },
+      {
+        "code": "GBP",
+        "name": "British Pound Sterling",
+        "symbol": "£"
+      },
+      {
+        "code": "JPY",
+        "name": "Japanese Yen",
+        "symbol": "¥"
+      },
+      {
+        "code": "AUD",
+        "name": "Australian Dollar",
+        "symbol": "A$"
+      },
+      {
+        "code": "CAD",
+        "name": "Canadian Dollar",
+        "symbol": "CA$"
+      },
+      {
+        "code": "INR",
+        "name": "Indian Rupee",
+        "symbol": "₹"
+      },
+      {
+        "code": "CNY",
+        "name": "Chinese Yuan",
+        "symbol": "¥"
+      },
+      {
+        "code": "BRL",
+        "name": "Brazilian Real",
+        "symbol": "R$"
+      },
+      {
+        "code": "MXN",
+        "name": "Mexican Peso",
+        "symbol": "$"
+      }
+      
+    ]
+  }
+  
