@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import newsParam from './newsapi_requestparameters.json'
 import { MdLanguage } from "react-icons/md";
 import { RiMoneyEuroCircleLine } from "react-icons/ri";
+import { FcCurrencyExchange } from "react-icons/fc";
 
 const Navbar = () => {
 
@@ -41,17 +42,17 @@ const Navbar = () => {
                                 <summary>Vi tilbyder</summary>
                                 <ul className="p-2">
                                     <li>
-                                        <NavLink to="/vejret" className='hover:bg-green-500' >
+                                        <NavLink to="/værelse" className='hover:bg-green-500' >
                                             Værelse
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/vejret2" className='hover:bg-green-500' >
+                                        <NavLink to="/restaurant" className='hover:bg-green-500' >
                                             Restaurant
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/vejret3" className='hover:bg-green-500' >
+                                        <NavLink to="/aktiviteter" className='hover:bg-green-500' >
                                             Aktiviteter
                                         </NavLink>
                                     </li>
@@ -60,35 +61,35 @@ const Navbar = () => {
                         </li>
                         <li>
                             <details>
-                                <summary>Tilbud</summary>
+                                <summary>Søg efter tilbud</summary>
                                 <ul className="p-2">
                                     <li className='w-36'>
-                                        <NavLink to="/vejret" className='hover:bg-green-500' >
+                                        <NavLink to="/vandrehjem" className='hover:bg-green-500' >
                                             Lej af hele vandrerhjemmet
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/vejret2" className='hover:bg-green-500' >
+                                        <NavLink to="/konference" className='hover:bg-green-500' >
                                             Lej af konferencelokalet
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/vejret3" className='hover:bg-green-500' >
+                                        <NavLink to="/togvogn" className='hover:bg-green-500' >
                                             Lej af togvogn
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/vejret3" className='hover:bg-green-500' >
+                                        <NavLink to="/konfirmation" className='hover:bg-green-500' >
                                             Konfirmationer
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/vejret3" className='hover:bg-green-500' >
+                                        <NavLink to="/brylluper" className='hover:bg-green-500' >
                                             Brylluper
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/vejret3" className='hover:bg-green-500' >
+                                        <NavLink to="/events" className='hover:bg-green-500' >
                                             Events
                                         </NavLink>
                                     </li>
@@ -96,35 +97,40 @@ const Navbar = () => {
                             </details>
                         </li>
                         <li>
-                            <NavLink to="/contact">
-                                Galleri
-                            </NavLink>
-                        </li>
-                        <li>
                             <details>
                                 <summary>Om os</summary>
                                 <ul>
                                     <li>
-                                        <NavLink to="/contact">
+                                        <NavLink to="/omos">
                                             Om os
                                         </NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/contact">
-                                            Kontakt os
+                                        <NavLink to="kontakt">
+                                            Kontakt
                                         </NavLink>
                                     </li>
                                 </ul>
                             </details>
                         </li>
-                        <li className='bg-slate-100'>
+                        <li>
+                            <NavLink to="/galleri">
+                                Galleri
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/nyheder">
+                                nyheder
+                            </NavLink>
+                        </li>
+                        <li className='bg-slate-100 ml-6'>
                             <NavLink>Bestil Online</NavLink>
                         </li>
                     </ul>
                 </div>
                 <div className="navbar-end">
                     <div className="custom-dropdown">
-                        <MdLanguage className="text-xl mr-6" />
+                        <MdLanguage className="text-xl mr-6 text-sky-600" />
                         <div className="custom-dropdown-content">
                             <ul>
                                 {newsParam &&
@@ -142,7 +148,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className="custom-dropdown">
-                        <RiMoneyEuroCircleLine className="text-xl" />
+                        <FcCurrencyExchange className="size-7 text-orange-600"/>
                         <div className="custom-dropdown-content">
                             <ul>
                                 <li><button className="custom-dropdown-item">DKK</button></li>

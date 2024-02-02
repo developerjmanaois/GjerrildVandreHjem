@@ -10,6 +10,7 @@ import Layout from './layout/Layout'
 import LayoutAdmin from './Layout/ADMIN/LayoutAdmin'
 import HomeAdmin from './views/ADMIN/HomeAdmin'
 import News from './views/News';
+import Data from './views/Data';
 
 
 function App () {
@@ -26,6 +27,7 @@ function App () {
           <Route path="contact" element={ <Contact /> } />
           <Route path="news" element={ <News /> } />
           <Route path="login" element={ <Login /> } />
+          <Route path="data" element={ <Data /> } />
           <Route path="*" element={ <NoMatch /> } />
         </Route>
 

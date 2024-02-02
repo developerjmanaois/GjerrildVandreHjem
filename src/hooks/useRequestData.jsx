@@ -8,15 +8,39 @@ const useRequestData = () => {
     const [ data, setData ] = useState( null );
     const [ error, setError ] = useState( null );
 
-    const makeRequest = async ( apiurl ) => {
+    const makeRequest = async ( apiurl, method = "GET", bodydata = null, headers = null, params = null ) => {
 
         setisLoading( true )
 
-        setTimeout( async () => {
-
             try {
 
-                let response = await axios.get( apiurl )
+                let response
+
+                switch ( method ) {
+
+                    case "GET":
+                        response = await axios.get( apiurl, { headers: headers, params: params } )
+                        break;
+                    
+                    case "POST":
+                        response = await axios.post( apiurl, bodydata )
+                        break;
+                    
+                    case "PUT":
+                        response = await axios.put( apiurl, bodydata )
+                        break;
+
+                    case "PATCH":
+                        response = await axios.patch( apiurl, bodydata )
+                        break;
+
+                    case "DELETE":
+                        response = await axios.delete( apiurl, bodydata )
+                        break;
+
+                        default:
+                        throw new Error ( "Invalid method- GET, POST, PATCH, DELETE was expected" )
+                }
 
                 if ( response.data ) {
 
@@ -41,8 +65,8 @@ const useRequestData = () => {
 
             }
 
-        }, 2000);
     }
+    
 
     return { data, isLoading, error, makeRequest }
 
