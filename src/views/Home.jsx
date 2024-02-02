@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Header from '../components/pageheader/Header'
+import Section from '../components/pagesection/Section'
+import Galleri from '../components/galleri/Galleri'
+
 
 const Home = () => {
+
   return (
 
     <section>
-
-      <h1>Home</h1>
-
+      <Header />
+      <Section />
+      <Galleri />
     </section>
   )
 }

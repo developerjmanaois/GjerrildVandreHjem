@@ -10,6 +10,7 @@ import Layout from './layout/Layout'
 import LayoutAdmin from './Layout/ADMIN/LayoutAdmin'
 import HomeAdmin from './views/ADMIN/HomeAdmin'
 import News from './views/News';
+import Data from './views/Data';
 import Aktiviteter from './views/activities/Aktiviteter';
 import Kattegatcentret from './views/activities/Kattegatcentret';
 import Djurssommerland from './views/activities/Djurssommerland';
@@ -17,6 +18,7 @@ import GjerrildNordstrand from './views/activities/GjerrildNordstrand';
 import Nationalpark from './views/activities/Nationalpark';
 import Reepark from './views/activities/Reepark';
 import Skandinavisk from './views/activities/Skandinavisk';
+
 
 
 function App () {
@@ -33,6 +35,7 @@ function App () {
           <Route path="contact" element={ <Contact /> } />
           <Route path="news" element={ <News /> } />
           <Route path="login" element={ <Login /> } />
+          <Route path="data" element={ <Data /> } />
           <Route path="*" element={ <NoMatch /> } />
         </Route>
 

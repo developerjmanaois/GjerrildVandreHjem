@@ -1,99 +1,57 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useState } from 'react';
+import { GrMoney } from 'react-icons/gr';
+import { SlGlobe } from 'react-icons/sl';
+import newsParam from './newsapi_requestparameters.json';
+import currency from './currency.json';
 
 const Navbar = () => {
+  const [language, setLanguage] = useState('en');
+  const [selectedCurrency, setSelectedCurrency] = useState('DKK');
 
-    return (
 
-
-        <nav>
-
-            <div className="navbar bg-blue-200 p-10 rounded-md">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Item 1</a></li>
-                        <li>
-                        <a>Parent</a>
-                        <ul className="p-2">
-                            <li><a>Submenu 1</a></li>
-                            <li><a>Submenu 2</a></li>
-                        </ul>
-                        </li>
-                        <li><a>Item 3</a></li>
-                    </ul>
-                    </div>
-                    <a className="btn btn-ghost text-xl">LOGO</a>
-                </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li>
-                            <NavLink to="/" className='hover:text-gray-200'>
-                                Home
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/about" className='hover:text-gray-200'>
-                                Om os
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/news" className='hover:text-gray-200'>
-                                Nyheder
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/contact" className='hover:text-gray-200' >
-                                Kontakt
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/aktiviteter" className='hover:text-gray-200' >
-                                Aktiviteter
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/kattegatcentret" className='hover:text-gray-200' >
-                             Kattegatcentret
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/djurssommerland" className='hover:text-gray-200' >
-                            Djurssommerland
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/gjerrildnordstrand" className='hover:text-gray-200' >
-                            GjerrildNordstrand
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/nationalpark" className='hover:text-gray-200' >
-                            Nationalpark
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/reepark" className='hover:text-gray-200' >
-                           Reepark
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/skandinavisk" className='hover:text-gray-200' >
-                           Skandinavisk
-                            </NavLink>
-                        </li>
-                    </ul>
-                </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
-                </div>
+  return (
+    <div className='flex justify-between max-w-5xl mx-auto items-center py-6'>
+      <div>
+        <img src="assets/Billeder/Galleri/NewLogo.png" alt="" className='w-32' />
+      </div>
+      <div className='flex gap-6 items-center uppercase text-sm'>
+        <div className='mr-6'>
+          <button className='px-4 py-1 rounded uppercase navBtn text-slate-500'>
+            Bestil online
+          </button>
+        </div>
+        <div className='flex justify-center items-center border border-solid py-2 px-4'>
+          <div className='flex items-center'>
+            <SlGlobe />
+            <div>
+              <select onChange={e => setLanguage(e.target.value)} className='outline-none border-none'>
+                {newsParam &&
+                  newsParam.language.map(c => (
+                    <option key={c.code} value={c.code}>
+                      {c.language}
+                    </option>
+                  ))}
+              </select>
             </div>
-            
-        </nav>
-    )
-}
+          </div>
+          <div className='mx-4'>
+            <span>|</span>
+          </div>
+          <div className='flex items-center'>
+            <GrMoney />
+            <select onChange={e => setSelectedCurrency(e.target.value)} className='outline-none border-none'>
+              {currency &&
+                currency.currencies.map(curr => (
+                  <option key={curr.code} value={curr.code}>
+                    {curr.code}
+                  </option>
+                ))}
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Navbar
+export default Navbar;
