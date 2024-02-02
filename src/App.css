@@ -2,44 +2,44 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-#root {
-  max-width: 1700px;
-  margin: 0 auto;
-  padding: 2rem;
+
+
+
+
+/* .wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes wave {
+  0% {
+    margin-left: 0;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  100% {
+    margin-left: -1600px;
   }
 }
 
-.card {
-  padding: 2em;
-}
+@keyframes swell {
 
-.read-the-docs {
-  color: #888;
-}
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+} */
