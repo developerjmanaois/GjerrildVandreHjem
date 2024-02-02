@@ -27,10 +27,9 @@ const Footer = () => {
 
   return (
 
-    <footer className="text-gray-200 p-4 md:p-6">
+    <footer className="text-gray-700 p-4 md:p-6">
       
     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-screen-lg mx-auto">
-      {/* Column 1: Contact and Social Media */}
       <div>
         <div>
           <img src="assets/Billeder/Galleri/NewLogo.png" alt="" className='w-36'/>
@@ -39,14 +38,15 @@ const Footer = () => {
       <div>
         <h3 className='text-lg md:text-l font-semibold mb-2'>Kontakt Os</h3>
         <div className='flex items-center mb-2'>
-          <FiMapPin className='text-xl text-red-500 mr-2' /> {/* Adjust icon size as needed */}
+          <FiMapPin className='text-xs mr-2' />
           <a href={mapLink} target="_blank" rel="noopener noreferrer" className='not-italic hover:underline'>
-        {address}
-      </a>
+            {address}
+          </a>
         </div> 
-        <p className='mb-2'>
-        <a href="tel:+4540224199">+4540224199</a>
-        </p>
+        <div className='mb-2 flex'>
+          <div><LuPhone /></div>
+          <div><a href="tel:+4540224199">+4540224199</a></div>
+        </div>
         <a href="mailto:info@gjerrildvandrerhjem.dk">info@gjerrildvandrerhjem.dk</a>
       </div>
     
@@ -71,9 +71,14 @@ const Footer = () => {
           </div>
           {/* Link to Reviews */}
      
-              <a href="#" className="text-blue-400 hover:text-blue-500">
+              <a 
+                href="https://dk.trustpilot.com/review/www.gjerrild-kro.dk" 
+                className="text-blue-400 hover:text-blue-500"
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 Læse vores anmeldelser
-              </a>
+            </a>
 
             {/* Column 4: Control Report, Certificates, Gjerrild Logo */}
             <div>
@@ -100,9 +105,7 @@ const Footer = () => {
   
     {/* Footer Bottom */}
     <div className="flex flex-col md:flex-row justify-between items-center mt-4">
-      <div>
-        <p className='text-xs md:text-sm'>© 2024 Gjerrildvandrehjem™.com. All rights reserved.</p>
-      </div>
+      <p className='text-xs md:text-sm'>© 2024 Gjerrildvandrehjem™.com. All rights reserved.</p>
       <div className='flex space-x-2 md:space-x-4 mt-2 md:mt-0'>
         <a href="https://www.facebook.com/people/Danhostel-Gjerrild-Vandrerhjem/100085306731927/" target="_blank" rel="noopener noreferrer" className='text-2xl md:text-3xl text-blue-600'>
           <TiSocialFacebook />
