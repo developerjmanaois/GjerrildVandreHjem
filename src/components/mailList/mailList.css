@@ -7,20 +7,19 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 50px;
+    padding: 60px 0px;
 }
 
 .mailInputContainer>input {
     width: 300px;
-    height: 30px;
-    padding: 20px;
+    padding: 8px;
     border: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
 .mailInputContainer>button {
-    height: 40px;
+    padding: 8px;
     width: 100px;
     background: #ff9c00;
     color: #ffffff;
