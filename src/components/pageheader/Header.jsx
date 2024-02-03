@@ -90,21 +90,21 @@ const Header = () => {
             </div>
 
             <div className='flex'>
-                    <div className='px-4 pt-8'>
-                        <h1 className="headerTitle text-4xl font-bold leading-tight">
-                            Gjerrild Vandrerhjem
-                        </h1>
-                        <p className='headerDesc text-sm font-small leading-tight'>
-                            På toppen af Djursland - med dig i centrum.
-                        </p>
-                        <p className='headerDesc text-xs max-w-2xl font-small leading-snug'>
-                        Vandrerhjemmet ligger skønt placeret på toppen af Djursland i den smukke by Gjerrild, mellem bøgeskove og strand. Vi har de perfekte rammer til ethvert ophold og her er altid noget at lave. Vi ligger tæt på klinter til fiskeri og gode sandstrande og der er mange børnevenlige aktiviteter og attraktioner i nem gå- og køreafstand.
-                        </p>
-                    </div>
-                    <div className='px-12'>
-                        <img src="assets/Billeder/Vandrerhjem/Frontbanner.jpg" alt=""  className='opacity-75'/>
-                    </div>
+                <div className='px-4 pt-8'>
+                    <h1 className="headerTitle text-4xl font-bold leading-tight">
+                        Gjerrild Vandrerhjem
+                    </h1>
+                    <p className='headerDesc text-sm font-small leading-tight'>
+                        På toppen af Djursland - med dig i centrum.
+                    </p>
+                    <p className='headerDesc text-xs max-w-2xl font-small leading-snug'>
+                    Vandrerhjemmet ligger skønt placeret på toppen af Djursland i den smukke by Gjerrild, mellem bøgeskove og strand. Vi har de perfekte rammer til ethvert ophold og her er altid noget at lave. Vi ligger tæt på klinter til fiskeri og gode sandstrande og der er mange børnevenlige aktiviteter og attraktioner i nem gå- og køreafstand.
+                    </p>
                 </div>
+                <div className='px-12'>
+                    <img src="assets/Billeder/Vandrerhjem/Frontbanner.jpg" alt=""  className='opacity-80'/>
+                </div>
+            </div>
 
                 <div className="headerSearch">
                     <div className="headerSearchItem">

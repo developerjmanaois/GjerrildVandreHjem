@@ -1,0 +1,44 @@
+{
+    "headerList": [
+      {
+        "className": "headerListItem active",
+        "icon": "<FaBed/>",
+        "text": "Værelse"
+      },
+      {
+        "className": "headerListItem",
+        "icon": "<RiRestaurantLine/>",
+        "text": "Restaurant"
+      },
+      {
+        "className": "headerListItem",
+        "icon": "<MdOutlineLocalActivity/>",
+        "text": "Aktiviteter"
+      },
+      {
+        "className": "headerListItem",
+        "icon": "<MdOutlineEmojiEvents/>",
+        "text": "Events"
+      },
+      {
+        "className": "headerListItem",
+        "icon": "<MdOutlineMeetingRoom/>",
+        "text": "Konference"
+      },
+      {
+        "className": "headerListItem",
+        "icon": "<IoNewspaperOutline/>",
+        "text": "Nyheder"
+      },
+      {
+        "className": "headerListItem",
+        "icon": "<GrGallery/>",
+        "text": "Galleri"
+      },
+      {
+        "className": "headerListItem",
+        "icon": "<SlPeople/>",
+        "text": "Om os"
+      }
+    ]
+  }
