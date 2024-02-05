@@ -11,7 +11,7 @@ const Aktiviteter = () => {
   useEffect(() => {
     makeRequest("https://api.airtable.com/v0/appdVuqpV8gkE6Oz1/aktiviteter", 
     "GET", null, {
-      'Authorization': "Bearer " + import.meta.env.VITE_APP_AIRTABLESHOPPING_TOKEN
+      'Authorization': "Bearer " + import.meta.env.VITE_APP_AIRTABLEAPIKEY
     });
   }, []);
 
