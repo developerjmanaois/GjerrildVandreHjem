@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { IoLocationSharp } from "react-icons/io5";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
@@ -69,7 +69,7 @@ const Galleri = () => {
       
       
   return (
-    <div className="hotelContainer">
+    <div className="hotelContainer mt-20">
         { open && <div className="slider">
           <IoCloseCircleOutline className='close' onClick={() => setOpen(false)}/>
           <FaRegArrowAltCircleLeft className='arrow' onClick={() => handleMove("l")}/>

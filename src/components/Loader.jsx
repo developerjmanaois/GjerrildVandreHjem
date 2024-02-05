@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import "./loader.css";
+import { useEffect } from 'react';
 
 const Loader = () => {
 
