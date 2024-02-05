@@ -78,8 +78,8 @@ const Header = () => {
   return (
     <div className='header'>
 
-            { isLoading && <Loader /> }
-            { error && <h2>Error ...</h2> }
+        { isLoading && <Loader /> }
+        { error && <h2>Error ...</h2> }
 
         <div className="headerContainer">
 
