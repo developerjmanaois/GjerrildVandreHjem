@@ -41,7 +41,7 @@ const Header = ({type}) => {
         { id: 5, icon: <MdOutlineMeetingRoom className='icon'/>, href: '/konference', label: 'Konference' },
         { id: 6, icon: <IoNewspaperOutline className='icon'/>, href: '/nyheder', label: 'Nyheder' },
         { id: 7, icon: <GrGallery className='icon'/>, href: '/galleri', label: 'Galleri' },
-        { id: 8, icon: <SlPeople className='icon'/>, href: '/omos', label: 'Om os' },
+        { id: 8, icon: <SlPeople className='icon'/>, href: '/about', label: 'Om os' },
     ];
 
     const [destination, setDestination] = useState("")
