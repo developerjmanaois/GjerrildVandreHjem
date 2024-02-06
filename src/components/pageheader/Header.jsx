@@ -107,18 +107,18 @@ const Header = () => {
             </div>
         )}
             <div className='px-12'>
-                <img src="assets/Billeder/Vandrerhjem/Frontbanner.jpg" alt=""  className='opacity-80'/>
+                <img src="assets/Billeder/Vandrerhjem/Frontbanner.jpg" alt=""  className='opacity-80 rounded'/>
             </div>
         </div>
 
             <div className="headerSearch">
                 <div className="headerSearchItem">
                     <FaBed className='headerIcon'/>
-                    <span className='headerSearchText'>Tjekke tilgængelighed</span>
+                    <span className='headerSearchText text-xs'>Tjekke tilgængelighed</span>
                 </div>
                 <div className="headerSearchItem">
                     <FaRegCalendarAlt className='headerIcon'/>
-                    <span onClick={()=>setOpenDate(!openDate)} className='headerSearchText'>{`${format(date[0].startDate, "MM/dd/yyyy")}`}</span>
+                    <span onClick={()=>setOpenDate(!openDate)} className='headerSearchText text-xs'>{`${format(date[0].startDate, "MM/dd/yyyy")}`}</span>
                     {openDate && <DateRange
                         editableDateInputs={true}
                         onChange={(item) => setDate([item.selection])}
@@ -130,12 +130,12 @@ const Header = () => {
                 </div>
                 <div className="headerSearchItem">
                     <FaRegCalendarAlt className='headerIcon'/>
-                    <span onClick={()=>setOpenDate(!openDate)} className='headerSearchText'>{`${format(date[0].endDate, "MM/dd/yyyy")}`}</span>
+                    <span onClick={()=>setOpenDate(!openDate)} className='headerSearchText text-xs'>{`${format(date[0].endDate, "MM/dd/yyyy")}`}</span>
                     </div>
                     
                 <div className="headerSearchItem">
                     <IoMdPerson className='headerIcon'/>
-                    <span onClick={()=>setOpenOptions(!openOptions)} className='headerSearchText'>{`${options.adult} adult ‧ ${options.children} children ‧ ${options.room} room`}</span>
+                    <span onClick={()=>setOpenOptions(!openOptions)} className='headerSearchText text-xs'>{`${options.adult} adult ‧ ${options.children} children ‧ ${options.room} room`}</span>
                     {openOptions && 
                         <div className="options">
                             <div className="optionItem">

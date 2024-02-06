@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import './searchitem.css'
+import './rooms.css'
 
-const SearchItem = () => {
+const Rooms = () => {
   const [slideIndex, setSlideIndex] = useState(1);
 
   useEffect(() => {
@@ -167,4 +167,4 @@ const SearchItem = () => {
   );
 };
 
-export default SearchItem;
+export default Rooms;
