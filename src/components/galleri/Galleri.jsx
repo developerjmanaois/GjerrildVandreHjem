@@ -1,54 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { IoLocationSharp } from "react-icons/io5";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import './galleri.css'
+import useRequestData from '../../hooks/useRequestData';
 
 const Galleri = () => {
 
     const [ slideNumber, setSlideNumber ] = useState(-1)
     const [ open, setOpen ] = useState(false)
 
+    const { data, isLoading, error, makeRequest } = useRequestData();
 
-    const photos = [
-        {
-          src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/251886321.jpg?k=1f27e3550d6b397bf3dfac2c3b9bb9ef9092971e09221177f594cc7b18ddcd35&o=&hp=1",
-          id:1
-        },
-        {
-          src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/181145451.jpg?k=909c90cc0e44ba26c498b883edf9bcc1f3d25b5c964775ccfafac04173799ab7&o=&hp=1",
-          id:2
-        },
-        {
-          src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/258921768.jpg?k=431ac45c1d974af895613679abf7fa965276a7b907c23c28b726dc162bde4c99&o=&hp=1",
-          id:3
-        },
-        {
-          src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/248870473.jpg?k=3d8390c13fe57b2d47ea3b640255683b33f2ae7e37bc386e3e309fa9114bbf04&o=&hp=1",
-          id:4
-        },
-        {
-          src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/251886321.jpg?k=1f27e3550d6b397bf3dfac2c3b9bb9ef9092971e09221177f594cc7b18ddcd35&o=&hp=1",
-          id:5
-        },
-        {
-          src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/251886321.jpg?k=1f27e3550d6b397bf3dfac2c3b9bb9ef9092971e09221177f594cc7b18ddcd35&o=&hp=1",
-          id:6
-        },
-        {
-          src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/251886321.jpg?k=1f27e3550d6b397bf3dfac2c3b9bb9ef9092971e09221177f594cc7b18ddcd35&o=&hp=1",
-          id:7
-        },
-        {
-          src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/251886321.jpg?k=1f27e3550d6b397bf3dfac2c3b9bb9ef9092971e09221177f594cc7b18ddcd35&o=&hp=1",
-          id:8
-        },
-        {
-          src: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/251886321.jpg?k=1f27e3550d6b397bf3dfac2c3b9bb9ef9092971e09221177f594cc7b18ddcd35&o=&hp=1",
-          id:9
-        }
-    ]
+    useEffect( () => {
+
+      makeRequest( "https://api.airtable.com/v0/appdVuqpV8gkE6Oz1/Galleri", "GET", null,
+
+      { "Authorization": "Bearer " + import.meta.env.VITE_APP_AIRTABLEAPIKEY }
+      
+      )
+
+  }, [] )
 
     const handleOpen = (i) => {
         setSlideNumber(i);
@@ -59,10 +32,11 @@ const Galleri = () => {
         let newSlideNumber;
       
         if (direction === "l") {
-          newSlideNumber = slideNumber === 0 ? photos.length - 1 : slideNumber - 1;
-        } else {
-          newSlideNumber = slideNumber === photos.length - 1 ? 0 : slideNumber + 1;
+          newSlideNumber = slideNumber === 0 ? 9 : slideNumber -1;
+        }else {
+          newSlideNumber = slideNumber === 9 ? 0 : slideNumber +1;
         }
+    
       
         setSlideNumber(newSlideNumber);
       };
@@ -70,27 +44,51 @@ const Galleri = () => {
       
   return (
     <div className="hotelContainer">
-        { open && <div className="slider">
+      { open && data.records && data.records.length > -1 && ( 
+        <div className="slider">
           <IoCloseCircleOutline className='close' onClick={() => setOpen(false)}/>
           <FaRegArrowAltCircleLeft className='arrow' onClick={() => handleMove("l")}/>
           <div className="sliderWrapper">
-            <img src={photos[slideNumber].src} alt="" className='sliderImg'/>
+            {data.records[slideNumber]?.fields.image && (
+              <img src={data.records[slideNumber].fields.image[0].url} alt="" className='sliderImg bg-contain bg-center modal-content' />
+            )}
           </div>
           <FaRegArrowAltCircleRight className='arrow' onClick={() => handleMove("r")}/>
-        </div>}
-        <div className="hotelWrapper">
-          <div className="hImages">
-            {photos.map(({ src, id }, i) => (
-              <div key={id} className="imgWrapper">
-                <img onClick={() => handleOpen(i)} src={src} alt="" className="hImg" />
-              </div>
-            ))}
-          </div>
-          
         </div>
-      
-    </div>
+      )}
+      {/* <div className="hotelWrapper">
+        <div className="hImages">
+        {data && data.records.map(({ fields, id }, i) => (
+          <div key={id} className="imgWrapper">
+            <img onClick={() => handleOpen(i)} src={fields.image.url} alt="" className="hImg" />
+          </div>
+        ))}
+        </div> */}
+        
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+            { data && data.records.map( ({ fields, id }, i) => (
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div key={id} className="">
+                    
+                    {fields.image && fields.image.map( image => (
+                        <figure className=''>
+                          <img
+                          onClick={() => handleOpen(i)}
+                          key={image.id}
+                          src={image.url}
+                          alt={image.filename}
+                          className='object-cover w-full h-60 rounded' 
+                          />
+                        </figure>
+                    ))}
+                </div>
+            </div>
+          )) }
+        
+        </div>
+    </div>  
   )
 }
 
 export default Galleri
+
