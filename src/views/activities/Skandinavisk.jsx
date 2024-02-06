@@ -44,27 +44,9 @@ const Skandinavisk = () => {
   if (error) return <Error message={error} />;
 
 
-  const renderIcon = (iconName) => {
-    switch (iconName) {
-      case 'facebook':
-        return <SlSocialFacebook className="text-blue-600 text-3xl"/>;
-      case 'twitter':
-        return <SlSocialTwitter  className="text-blue-400 text-3xl"/>;
-      case 'pinterest':
-        return <TiSocialPinterest  className="text-red-600 text-3xl"/>;
-      default:
-        return null;
-    }
-  };
-
-
-
-   
-  
-
-
   return (
   <article className="max-w-4xl mx-auto my-8 p-5 bg-white shadow-lg rounded-lg">
+     <h1 className='mb-6 text-4xl font-bold text-center text-gray-800'>Skandinavisk Dyrepark</h1>
 
   
       {isLoading && <Loader />}
@@ -73,21 +55,27 @@ const Skandinavisk = () => {
 
      {
       activityData && activityData.records &&
-      <img className="w-full h-64 object-cover rounded-lg" src={activityData.records[0].fields.image[0].url} alt="pingvinner" />
+      <img className="w-full h-100 object-cover rounded-lg" src={activityData.records[0].fields.image[0].url} alt="bear_image" />
      }
 
      { data && data.records.map(k => 
       <div key={k.id} className='my-5'>
-        <p className='text-lg font-semibold'>{k.fields.Title}</p>
-        <p className="text-gray-600">{k.fields.Description}</p>
+        <h2 className='text-2xl font-semibold pb-4'>{k.fields.Title}</h2>
+        <p className="leading-8 text-gray-600">{k.fields.Description}</p>
       </div>) 
     }
-   <div className="flex items-center space-x-4 mt-4">
-      <h3 className="font-bold text-lg">DEL:</h3>
-      {renderIcon('facebook')}
-      {renderIcon('pinterest')}
-      {renderIcon('twitter')}
-    </div>
+    <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 justify-center">
+        <a href="https://www.facebook.com/people/Danhostel-Gjerrild-Vandrerhjem/100085306731927/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="flex items-center justify-center">
+          <SlSocialFacebook className="text-blue-600 text-3xl"/>
+        </a>
+        <a href="https://www.pinterest.com/pin/create/button/?url=https://gjerrildvandrerhjem.dk/places/rodos/" target="_blank" rel="noopener noreferrer" aria-label="Pin this on Pinterest" className="flex items-center justify-center">
+          <TiSocialPinterest className="text-red-600 text-3xl"/>
+        </a>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fgjerrildvandrerhjem.dk%2Fplaces%2Frodos%2F" target="_blank" rel="noopener noreferrer" aria-label="Tweet this" className="flex items-center justify-center">
+          <SlSocialTwitter className="w-6 h-6 text-black-500"/>
+        </a>
+      </div>
+ 
   </article>
       
 

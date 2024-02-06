@@ -29,7 +29,7 @@ const Aktiviteter = () => {
       return data.records.slice(0, 6).map((record, index) => {
         const imageUrl = record.fields.image?.[0]?.url;
         const title = titles[index];
-        // const destinationRoute = `/kattegatcentret.toLowerCase()}`
+
       
 
         return (

@@ -18,6 +18,7 @@ import GjerrildNordstrand from './views/activities/GjerrildNordstrand';
 import Nationalpark from './views/activities/Nationalpark';
 import Reepark from './views/activities/Reepark';
 import Skandinavisk from './views/activities/Skandinavisk';
+import Restaurant from './views/restaurant/Restaurant';
 
 
 
@@ -54,6 +55,10 @@ function App () {
            <Route path="nationalpark" element={ <Nationalpark/> } />
            <Route path="reepark" element={ <Reepark/> } />
            <Route path="skandinavisk" element={ <Skandinavisk/> } />
+           </Route>
+            {/* ---------------- Aktiviteter ---------------- */ }
+            <Route>
+           <Route path="restaurant" element={ <Restaurant /> } />
            </Route>
           
       </>
