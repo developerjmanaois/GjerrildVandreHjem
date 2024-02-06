@@ -56,36 +56,27 @@ const Galleri = () => {
           <FaRegArrowAltCircleRight className='arrow' onClick={() => handleMove("r")}/>
         </div>
       )}
-      {/* <div className="hotelWrapper">
-        <div className="hImages">
-        {data && data.records.map(({ fields, id }, i) => (
-          <div key={id} className="imgWrapper">
-            <img onClick={() => handleOpen(i)} src={fields.image.url} alt="" className="hImg" />
+      
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+        { data && data.records.map( ({ fields, id }, i) => (
+          <div key={id} className="card w-96 bg-base-100 shadow-xl">
+              <div>
+                  
+                  {fields.image && fields.image.map( image => (
+                      <figure key={image.id}>
+                        <img
+                        onClick={() => handleOpen(i)}
+                        key={image.id}
+                        src={image.url}
+                        alt={image.filename}
+                        className='object-cover w-full h-60 rounded' 
+                        />
+                      </figure>
+                  ))}
+              </div>
           </div>
-        ))}
-        </div> */}
-        
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
-            { data && data.records.map( ({ fields, id }, i) => (
-            <div key={id} className="card w-96 bg-base-100 shadow-xl">
-                <div>
-                    
-                    {fields.image && fields.image.map( image => (
-                        <figure key={image.id}>
-                          <img
-                          onClick={() => handleOpen(i)}
-                          key={image.id}
-                          src={image.url}
-                          alt={image.filename}
-                          className='object-cover w-full h-60 rounded' 
-                          />
-                        </figure>
-                    ))}
-                </div>
-            </div>
-          )) }
-        
-        </div>
+        )) }
+      </div>
     </div>  
   )
 }

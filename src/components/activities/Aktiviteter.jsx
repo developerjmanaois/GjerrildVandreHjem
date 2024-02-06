@@ -52,7 +52,7 @@ const Aktiviteter = () => {
   };
 
   return (
-    <div className="px-4 py-8">
+    <div className="px-4 py-8 max-w-5xl mx-auto">
       <h1 className="text-center text-4xl font-extrabold text-gray-800 mb-4 leading-tight tracking-tight">
         Oplev Djursland
       </h1>
