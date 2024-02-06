@@ -10,7 +10,7 @@ const Nyheder = () => {
 
   const { isLoading, data, error, makeRequest } = useRequestData();
 
-  const [ searchKey, setSearchKey ] = useState("Denmark");
+  const [ searchKey, setSearchKey ] = useState("Nature");
 
   const [ language, setLanguage ] = useState( "en" );
 
@@ -54,7 +54,7 @@ const Nyheder = () => {
   });
 
   return (
-    <div className='px-10 py-10'>
+    <div className='p-2 max-w-7xl mx-auto'>
       <h1 className="mb-6 text-3xl font-bold text-center mt-12">Nyheder</h1>
 
       { isLoading && <Loader/> }
@@ -107,8 +107,8 @@ const Nyheder = () => {
                 <p>{truncateText(n.content, 150)}</p>
                 
                 <div className='card-actions justify-end'>
-                  <button className='btn bg-green-500'>
-                    <a href={ n.url } target='blank' rel='noopener noreferrer' className='h-fit'>Læs mere ...</a>
+                  <button className='btn bg-amber-500'>
+                    <a href={ n.url } target='blank' rel='noopener noreferrer' className='h-fit'>Læs mere</a>
                   </button>
                 </div>
               </div>

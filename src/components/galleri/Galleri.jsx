@@ -57,9 +57,9 @@ const Galleri = () => {
         </div>
       )}
       
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-5xl">
         { data && data.records.map( ({ fields, id }, i) => (
-          <div key={id} className="card w-96 bg-base-100 shadow-xl">
+          <div key={id} className="card w-80 bg-base-100 shadow-xl">
               <div>
                   
                   {fields.image && fields.image.map( image => (
