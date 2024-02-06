@@ -22,30 +22,29 @@ const Aktiviteter = () => {
         "Djurssommerland 22km",
         "Nationalpark Mols Bjerge",
         "Skandinavisk Dyrepark 3km",
-        "Ree Park 34km",
-        "Gjerrild Nordstrand"
+        "ReePark 34km",
+        "GjerrildNordstrand"
       ];
 
       return data.records.slice(0, 6).map((record, index) => {
         const imageUrl = record.fields.image?.[0]?.url;
         const title = titles[index];
-
+        const baseTitle = title.split(' ')[0].toLowerCase();
+        const destinationRoute = `/${baseTitle}`;
+     
       
 
         return (
-          <div key={index} className="flex justify-center mb-8">
-            
-            <div className="relative w-full h-64 bg-cover bg-center rounded-lg shadow-lg overflow-hidden transition duration-500 ease-in-out transform hover:scale-105" style={{ backgroundImage: `url(${imageUrl})` }}>
-              {/* Overlay to ensure the text stands out against the background image */}
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center hover:bg-opacity-40 transition duration-500">
-                <p className="text-white font-semibold text-xl transition duration-500 ease-in-out">{title}</p>
-              </div>
+          <Link to={destinationRoute} key={index} className="flex justify-center mb-8">
+          <div className="relative w-full h-64 bg-cover bg-center rounded-lg shadow-lg overflow-hidden transition duration-500 ease-in-out transform hover:scale-105" style={{ backgroundImage: `url(${imageUrl})` }}>
+            {/* Overlay to ensure the text stands out against the background image */}
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center hover:bg-opacity-40 transition duration-500">
+              <p className="text-white font-semibold text-xl transition duration-500 ease-in-out">{title}</p>
             </div>
-           
-         
           </div>
-        );
-      });
+        </Link>
+      );
+    });
     } else {
       return <p>No activities found</p>;
     }
