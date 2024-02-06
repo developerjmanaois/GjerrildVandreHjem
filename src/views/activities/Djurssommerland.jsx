@@ -59,10 +59,6 @@ const Djurssommerland = () => {
 
 
 
-   
-  
-
-
   return (
   <article className="max-w-4xl mx-auto my-8 p-5 bg-white shadow-lg rounded-lg">
 
