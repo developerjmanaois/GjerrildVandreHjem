@@ -4,12 +4,11 @@ import './App.css'
 import Home from './views/Home'
 import About from './views/About'
 import Contact from './views/Contact'
-import Login from './views/Login'
 import NoMatch from './views/NoMatch'
 import Layout from './layout/Layout'
 import LayoutAdmin from './Layout/ADMIN/LayoutAdmin'
 import HomeAdmin from './views/ADMIN/HomeAdmin'
-import News from './views/News';
+import Nyheder from './views/Nyheder';
 import Data from './views/Data';
 import Aktiviteter from './views/activities/Aktiviteter';
 import Kattegatcentret from './views/activities/Kattegatcentret';
@@ -33,8 +32,7 @@ function App () {
           <Route index element={ <Home /> } />
           <Route path="about" element={ <About /> } />
           <Route path="contact" element={ <Contact /> } />
-          <Route path="news" element={ <News /> } />
-          <Route path="login" element={ <Login /> } />
+          <Route path="nyheder" element={ <Nyheder /> } />
           <Route path="data" element={ <Data /> } />
           <Route path="*" element={ <NoMatch /> } />
         </Route>
