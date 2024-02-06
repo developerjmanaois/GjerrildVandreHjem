@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GrMoney } from 'react-icons/gr';
 import { SlGlobe } from 'react-icons/sl';
 import newsParam from './newsapi_requestparameters.json';
 import currency from './currency.json';
 
+
 const Navbar = () => {
+
   const [language, setLanguage] = useState('en');
   const [selectedCurrency, setSelectedCurrency] = useState('DKK');
-
 
   return (
     <div className='flex justify-between max-w-5xl mx-auto items-center py-6'>
@@ -20,11 +21,12 @@ const Navbar = () => {
             Bestil online
           </button>
         </div>
-        <div className='flex justify-center items-center border border-solid py-2 px-4'>
+        <div className='flex justify-center items-center border border-solid py-1 px-2'>
           <div className='flex items-center'>
-            <SlGlobe />
+            <SlGlobe className='text-xs'/>
             <div>
-              <select onChange={e => setLanguage(e.target.value)} className='outline-none border-none'>
+            <select onChange={e => setLanguage( e.target.value )} value={language} className='outline-none border-none text-xs'>
+
                 {newsParam &&
                   newsParam.language.map(c => (
                     <option key={c.code} value={c.code}>
@@ -38,8 +40,8 @@ const Navbar = () => {
             <span>|</span>
           </div>
           <div className='flex items-center'>
-            <GrMoney />
-            <select onChange={e => setSelectedCurrency(e.target.value)} className='outline-none border-none'>
+            <GrMoney className='text-xs'/>
+            <select onChange={e => setSelectedCurrency(e.target.value)} className='outline-none border-none text-xs m-0'>
               {currency &&
                 currency.currencies.map(curr => (
                   <option key={curr.code} value={curr.code}>

@@ -48,12 +48,12 @@ function App () {
            {/* ---------------- Aktiviteter ---------------- */ }
            <Route>
            <Route path="aktiviteter" element={ <Aktiviteter /> } />
-           <Route path="/kattegatcentret" element={ <Kattegatcentret /> } />
-           <Route path="/djurssommerland" element={ <Djurssommerland /> } />
-           <Route path="/gjerrildnordstrand" element={ <GjerrildNordstrand/> } />
-           <Route path="/nationalpark" element={ <Nationalpark/> } />
-           <Route path="/reepark" element={ <Reepark/> } />
-           <Route path="/skandinavisk" element={ <Skandinavisk/> } />
+           <Route path="kattegatcentret" element={ <Kattegatcentret /> } />
+           <Route path="djurssommerland" element={ <Djurssommerland /> } />
+           <Route path="gjerrildnordstrand" element={ <GjerrildNordstrand/> } />
+           <Route path="nationalpark" element={ <Nationalpark/> } />
+           <Route path="reepark" element={ <Reepark/> } />
+           <Route path="skandinavisk" element={ <Skandinavisk/> } />
            </Route>
           
       </>

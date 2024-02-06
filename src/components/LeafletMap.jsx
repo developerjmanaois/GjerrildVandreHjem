@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from 'react'
 import L from 'leaflet'
 import 'Leaflet/dist/leaflet.css'
 
