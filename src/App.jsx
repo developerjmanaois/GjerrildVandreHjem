@@ -10,13 +10,13 @@ import LayoutAdmin from './Layout/ADMIN/LayoutAdmin'
 import HomeAdmin from './views/ADMIN/HomeAdmin'
 import Nyheder from './views/Nyheder';
 import Data from './views/Data';
-import Aktiviteter from './views/activities/Aktiviteter';
-import Kattegatcentret from './views/activities/Kattegatcentret';
-import Djurssommerland from './views/activities/Djurssommerland';
-import GjerrildNordstrand from './views/activities/GjerrildNordstrand';
-import Nationalpark from './views/activities/Nationalpark';
-import Reepark from './views/activities/Reepark';
-import Skandinavisk from './views/activities/Skandinavisk';
+import Aktiviteter from './components/activities/Aktiviteter';
+import Kattegatcentret from './components/activities/Kattegatcentret';
+import Djurssommerland from './components/activities/Djurssommerland';
+import GjerrildNordstrand from './components/activities/GjerrildNordstrand';
+import Nationalpark from './components/activities/Nationalpark';
+import Reepark from './components/activities/Reepark';
+import Skandinavisk from './components/activities/Skandinavisk';
 import Restaurant from './views/restaurant/Restaurant';
 
 

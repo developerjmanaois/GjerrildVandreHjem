@@ -6,6 +6,7 @@ import MailList from '../components/mailList/MailList'
 import Rooms from '../components/rooms/Rooms'
 import useRequestData from '../hooks/useRequestData'
 import Loader from '../components/Loader'
+import Aktiviteter from '../components/activities/Aktiviteter'
 
 const Home = () => {
   
@@ -20,8 +21,9 @@ const Home = () => {
 
       <Header />
       <Section />
-      <Rooms />
       <Galleri />
+      <Rooms />
+      <Aktiviteter />
       <MailList />
     </section>
   )
