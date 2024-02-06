@@ -67,11 +67,11 @@ const Galleri = () => {
         
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
             { data && data.records.map( ({ fields, id }, i) => (
-            <div className="card w-96 bg-base-100 shadow-xl">
-                <div key={id} className="">
+            <div key={id} className="card w-96 bg-base-100 shadow-xl">
+                <div>
                     
                     {fields.image && fields.image.map( image => (
-                        <figure className=''>
+                        <figure key={image.id}>
                           <img
                           onClick={() => handleOpen(i)}
                           key={image.id}

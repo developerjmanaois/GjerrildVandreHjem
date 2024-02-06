@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { GrMoney } from 'react-icons/gr';
 import { SlGlobe } from 'react-icons/sl';
-import newsParam from './newsapi_requestparameters.json';
-import currency from './currency.json';
+import newsParam from '../assets/json/newsapi_requestparameters.json';
+import currency from '../assets/json/currency.json';
 
 
 const Navbar = () => {
