@@ -9,7 +9,7 @@ import { TiSocialPinterest } from "react-icons/ti";
 import Navbar from '../../layout/Navbar';
 import MailList from '../mailList/MailList';
 import Footer from '../../layout/Footer';
-import Header from '../../layout/Header';
+import Header from '../../layout/pageheader/Header';
 
 const Kattegatcentret = () => {
   

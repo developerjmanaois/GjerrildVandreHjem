@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 import { format } from 'date-fns'
 import { DateRange } from 'react-date-range';
 import SearchItem from '../searchItem/SearchItem';
-import Header from '../../layout/Header';
+import Header from '../../layout/pageheader/Header';
 import Footer from '../../layout/Footer';
 
 const List = () => {

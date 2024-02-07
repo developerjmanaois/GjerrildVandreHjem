@@ -4,7 +4,7 @@ import Loader from '../components/Loader';
 import Error from '../components/Error';
 import { Link } from 'react-router-dom';
 import Navbar from '../layout/Navbar';
-import Header from '../layout/Header';
+import Header from '../layout/pageheader/Header';
 import MailList from '../components/mailList/MailList';
 import Footer from '../layout/Footer';
 

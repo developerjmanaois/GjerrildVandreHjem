@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import '../components/pageheader/header.css';
+import '../pageheader/header.css';
 import { FaBed } from "react-icons/fa";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { IoMdPerson } from "react-icons/io";
@@ -15,9 +15,9 @@ import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import {format} from "date-fns"
 import { useNavigate } from 'react-router-dom';
-import useRequestData from '../hooks/useRequestData';
-import Loader from '../components/Loader';
-import Navbar from './Navbar';
+import useRequestData from '../../hooks/useRequestData';
+import Loader from '../../components/Loader';
+import Navbar from '../Navbar';
 
 const Header = ({type}) => {
 
@@ -38,9 +38,7 @@ const Header = ({type}) => {
         { id: 2, icon: <RiRestaurantLine className='icon' />, href: '/restaurant', label: 'Restaurant' },
         { id: 3, icon: <MdOutlineLocalActivity className='icon' />, href: '/aktiviteter', label: 'Aktiviteter' },
         { id: 4, icon: <MdOutlineEmojiEvents className='icon'/>, href: '/events', label: 'Events' },
-        { id: 5, icon: <MdOutlineMeetingRoom className='icon'/>, href: '/konference', label: 'Konference' },
         { id: 6, icon: <IoNewspaperOutline className='icon'/>, href: '/nyheder', label: 'Nyheder' },
-        { id: 7, icon: <GrGallery className='icon'/>, href: '/galleri', label: 'Galleri' },
         { id: 8, icon: <SlPeople className='icon'/>, href: '/about', label: 'Om os' },
     ];
 
@@ -86,7 +84,7 @@ const Header = ({type}) => {
 
             <div className={type === "list" ? "headerContainer listMode" : "headerContainer"}>
 
-                <div className="headerList">
+                <div className="headerList ">
                     {headerItems.map(item => (
                     <div key={item.id} className='headerListItem'>
                         {item.icon}
