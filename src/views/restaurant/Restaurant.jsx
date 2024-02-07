@@ -32,9 +32,9 @@ const Restaurant = () => {
         let newSlideNumber;
       
         if (direction === "l") {
-          newSlideNumber = slideNumber === 0 ? 8 : slideNumber -1;
+          newSlideNumber = slideNumber === 0 ? 11 : slideNumber -1;
         }else {
-          newSlideNumber = slideNumber === 8 ? 0 : slideNumber +1;
+          newSlideNumber = slideNumber === 11 ? 0 : slideNumber +1;
         }
     
       
