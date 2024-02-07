@@ -62,7 +62,7 @@ const Kattegatcentret = () => {
 
         { data && data.records.map(k => 
           <div key={k.id} className='my-5'>
-            <p className='text-2xl font-semibold'>{k.fields.Title}</p>
+            <h2 className='text-2xl font-bold'>{k.fields.Title}</h2>
             <p className="leading-8 text-gray-600 pt-2 pb-4">{k.fields.Description}</p>
           </div>) 
         }

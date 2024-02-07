@@ -63,7 +63,7 @@ const Skandinavisk = () => {
 
         { data && data.records.map(k => 
           <div key={k.id} className='my-5'>
-            <h2 className='text-2xl font-semibold pb-4'>{k.fields.Title}</h2>
+            <h2 className='text-2xl font-bold pb-4'>{k.fields.Title}</h2>
             <p className="leading-8 text-gray-600">{k.fields.Description}</p>
           </div>) 
         }

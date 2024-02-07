@@ -47,9 +47,9 @@ const About = () => {
         {aboutData && (
           <>
           <div className="flex justify-around items-center">
-            <div className='text-center'>
-              <h3 className="text-2xl font-bold text-gray-700 mb-3">{aboutData.Name}</h3>
-              <p className="text-gray-600 text-sm font-semibold leading-relaxed max-w-lg">{aboutData.About}</p>
+            <div>
+              <h3 className="text-2xl font-bold text-gray-700 mb-3 text-center">{aboutData.Name}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed max-w-lg">{aboutData.About}</p>
             </div>
             {aboutData.image && (
             

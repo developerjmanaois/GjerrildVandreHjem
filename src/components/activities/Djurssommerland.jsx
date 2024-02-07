@@ -62,7 +62,7 @@ const Djurssommerland = () => {
         {
           data && data.records.map(k => 
           <div key={k.id} className='my-5'>
-            <h2 className='text-2xl font-semibold'>{k.fields.title}</h2>
+            <h2 className='text-2xl font-bold'>{k.fields.title}</h2>
             <p className="leading-8 text-gray-600 pt-2 pb-4">{k.fields.Description}</p>
           </div>) 
         }
