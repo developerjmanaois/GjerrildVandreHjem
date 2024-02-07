@@ -1,33 +1,32 @@
 import React, { useState } from 'react'
-import Navbar from '../components/navbar/Navbar'
-import Header from '../components/header/Header'
-import './list.css'
+import '../list/list.css'
 import { useLocation } from 'react-router-dom'
 import { format } from 'date-fns'
 import { DateRange } from 'react-date-range';
-import SearchItem from '../components/searchItem/SearchItem'
+import SearchItem from '../searchItem/SearchItem';
+import Header from '../../layout/Header';
+import Footer from '../../layout/Footer';
 
 const List = () => {
 
   const location = useLocation()
 
-  const [destination, setDestination] = useState(location.state.destination)
-  const [date, setDate] = useState(location.state.date)
+  const defaultDate = [{ startDate: new Date(), endDate: new Date() }]
+  const defaultOptions = { adult: 1, children: 0, room: 1 }
+
+  // Initialize state with location.state or default values
+  const [date, setDate] = useState(location.state ? location.state.date : defaultDate)
   const [openDate, setOpenDate] = useState(false)
-  const [options, setOptions] = useState(location.state.options)
+  const [options, setOptions] = useState(location.state ? location.state.options : defaultOptions)
+
 
   return (
     <div>
-      <Navbar />
-      <Header type="list"/>
+      <Header type="list" />
       <div className="listContainer">
         <div className="listWrapper">
           <div className="listSearch">
             <h1 className="listTitle">Search</h1>
-            <div className="listItem">
-              <label>Destination</label>
-              <input type="text" />
-            </div>
             <div className="listItem">
               <label>Check-in date</label>
               <span onClick={() => setOpenDate(!openDate)}>{`${format(date[0].startDate, "MM/dd/yyyy")}`}</span>
@@ -88,13 +87,10 @@ const List = () => {
           </div>
           <div className="listResult">
             <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

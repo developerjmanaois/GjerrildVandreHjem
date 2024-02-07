@@ -1,11 +1,12 @@
 .searchItem {
-    border: 1px solid lightgray;
-    padding: 10px;
+    border: 1px solid #ffb235;
+    padding: 15px;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 20px;
+    line-height: 15px;
 }
 
 .sImg {
@@ -42,10 +43,11 @@
 .sSubtitle {
     font-size: 12px;
     font-weight: bold;
+    color: #ffb235;
 }
 
 .sFeatures {
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .sCancel {
@@ -68,7 +70,7 @@
 
 .sRating {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .sRating>span {

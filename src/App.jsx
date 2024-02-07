@@ -10,7 +10,7 @@ import LayoutAdmin from './Layout/ADMIN/LayoutAdmin'
 import HomeAdmin from './views/ADMIN/HomeAdmin'
 import Nyheder from './views/Nyheder';
 import Data from './views/Data';
-import Aktiviteter from './components/activities/Aktiviteter';
+import Aktiviteter from './views/Aktiviteter';
 import Kattegatcentret from './components/activities/Kattegatcentret';
 import Djurssommerland from './components/activities/Djurssommerland';
 import GjerrildNordstrand from './components/activities/GjerrildNordstrand';
@@ -18,6 +18,7 @@ import Nationalpark from './components/activities/Nationalpark';
 import Reepark from './components/activities/Reepark';
 import Skandinavisk from './components/activities/Skandinavisk';
 import Restaurant from './views/restaurant/Restaurant';
+import List from './components/list/List';
 
 
 
@@ -34,6 +35,14 @@ function App () {
           <Route path="about" element={ <About /> } />
           <Route path="contact" element={ <Contact /> } />
           <Route path="nyheder" element={ <Nyheder /> } />
+          <Route path="aktiviteter" element={ <Aktiviteter /> } />
+          <Route path="kattegatcentret" element={ <Kattegatcentret /> } />
+           <Route path="djurssommerland" element={ <Djurssommerland /> } />
+           <Route path="gjerrildnordstrand" element={ <GjerrildNordstrand/> } />
+           <Route path="nationalpark" element={ <Nationalpark/> } />
+           <Route path="reepark" element={ <Reepark/> } />
+           <Route path="skandinavisk" element={ <Skandinavisk/> } />
+           <Route path="restaurant" element={ <Restaurant /> } />
           <Route path="data" element={ <Data /> } />
           <Route path="*" element={ <NoMatch /> } />
         </Route>
@@ -46,19 +55,8 @@ function App () {
 
            {/* ---------------- Aktiviteter ---------------- */ }
            <Route>
-           <Route path="aktiviteter" element={ <Aktiviteter /> } />
-           <Route path="kattegatcentret" element={ <Kattegatcentret /> } />
-           <Route path="djurssommerland" element={ <Djurssommerland /> } />
-           <Route path="gjerrildnordstrand" element={ <GjerrildNordstrand/> } />
-           <Route path="nationalpark" element={ <Nationalpark/> } />
-           <Route path="reepark" element={ <Reepark/> } />
-           <Route path="skandinavisk" element={ <Skandinavisk/> } />
+            <Route path="list" element={ <List /> } />
            </Route>
-            {/* ---------------- Aktiviteter ---------------- */ }
-            <Route>
-           <Route path="restaurant" element={ <Restaurant /> } />
-           </Route>
-          
       </>
     )
   )

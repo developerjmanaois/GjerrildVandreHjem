@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { GrMoney } from 'react-icons/gr';
 import { SlGlobe } from 'react-icons/sl';
 import newsParam from '../assets/json/newsapi_requestparameters.json';
@@ -13,12 +14,12 @@ const Navbar = () => {
   return (
     <div className='flex justify-between max-w-5xl mx-auto items-center py-6'>
       <div>
-        <img src="assets/Billeder/Galleri/NewLogo.png" alt="" className='w-32' />
+        <a href='/'><img src="assets/Billeder/Galleri/NewLogo.png" alt="" className='w-32' /></a>
       </div>
       <div className='flex gap-6 items-center uppercase text-sm'>
         <div className='mr-6'>
           <button className='px-4 py-1 rounded uppercase navBtn text-slate-500'>
-            Bestil online
+            <Link to="/list">Bestil online</Link>
           </button>
         </div>
         <div className='flex justify-center items-center border border-solid py-1 px-2'>
