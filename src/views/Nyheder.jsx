@@ -10,7 +10,7 @@ const Nyheder = () => {
 
   const { isLoading, data, error, makeRequest } = useRequestData();
 
-  const [ searchKey, setSearchKey ] = useState("Nature");
+  const [ searchKey, setSearchKey ] = useState("Denmark");
 
   const [ language, setLanguage ] = useState( "en" );
 

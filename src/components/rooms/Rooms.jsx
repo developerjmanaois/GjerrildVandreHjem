@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import './rooms.css'
+import useRequestData from '../../hooks/useRequestData';
 
 const Rooms = () => {
+
+  const { data, isLoading, error, makeRequest } = useRequestData();
   const [slideIndex, setSlideIndex] = useState(1);
 
   useEffect(() => {
@@ -11,10 +14,10 @@ const Rooms = () => {
   const plusSlides = (n) => {
     setSlideIndex((prevIndex) => {
       let newIndex = prevIndex + n;
-      if (newIndex > 4) {
+      if (newIndex > 9) {
         newIndex = 1;
       } else if (newIndex < 1) {
-        newIndex = 4;
+        newIndex = 9;
       }
       return newIndex;
     });
@@ -43,30 +46,31 @@ const Rooms = () => {
   return (
     <div>
       <div className='slideshow-container'>
-      
+      { isLoading && <Loader/> }
+      { error && <Error /> }
         <div className={`mySlides fade ${slideIndex === 1 ? 'active' : ''}`}>
-          <div className="searchItem">
+          <div className="roomItem">
               <img src='assets/Billeder/Vandrerhjem/vaerelse2.jpg' className='w-52 h-52' alt='Slide 1' />
-              <div className="sDesc">
-                <h1 className="text-xl">Tower Street Apartment</h1>
-                <span className='sDistance'>500m from center</span>
-                <span className='sSubtitle'>Studio Apartment with Air conditioning</span>
-                <span className='sFeatures'>
-                    Entire studio ‧ 1 bathroom ‧ 21m² 1 full bed
+              <div className="rDesc">
+                <h1 className="rTitle">1 Person med eget bad</h1>
+                <span className='rDistance'>500m from center</span>
+                <span className='rFeatures'>
+                  21m² værelse ‧ 1 badværelse ‧ 1 stor seng ‧ 1 køjeseng
                 </span>
-                <span className='sCancel'>Free Cancellation</span>
-                <span className='sCancelSub'>
-                    You can cancel later, so lock in this great price today!
+                <span className='rSubtitle'>Hyggeligt værelse med en 120x200 boksmadras, en køjeseng på 80x200, skrivebord og stol, skab med bøjlestang, eget badeværelse med bruser.</span>
+                <span className='rCancel'>Gratis Afbestilling</span>
+                <span className='rCancelSub'>
+                    Afbestil senere, reservere prisen i dag!
                 </span>
               </div>
-              <div className="sDetails">
-                <div className="sRating">
+              <div className="rDetails">
+                <div className="rRating">
                     <button>8.9</button>
                 </div>
-                <div className="sDetailtxt">
-                    <span className='sPrice'>$123</span>
-                    <span className='sTax'>Includes taxes and fees</span>
-                    <button className='sBtn'>See Availability</button>
+                <div className="rDetailtxt">
+                    <span className='rPrice'>495DKK</span>
+                    <span className='rTax'>Inc. moms og gebyr</span>
+                    <button className='rBtn'>Se Tilgængelighed</button>
                 </div>
               </div>
           </div>
@@ -74,84 +78,217 @@ const Rooms = () => {
         
 
         <div className={`mySlides fade ${slideIndex === 2 ? 'active' : ''}`}>
-          <div className="searchItem">
+          <div className="roomItem">
             <img src='assets/Billeder/Vandrerhjem/vaerelse1.jpg' className='w-52 h-52' alt='Slide 1' />
-            <div className="sDesc">
-              <h1 className="sTitle">Tower Street Apartment</h1>
-              <span className='sDistance'>500m from center</span>
-              <span className='sSubtitle'>Studio Apartment with Air conditioning</span>
-              <span className='sFeatures'>
-                  Entire studio ‧ 1 bathroom ‧ 21m² 1 full bed
+            <div className="rDesc">
+              <h1 className="rTitle">2 Personer med eget bad</h1>
+              <span className='rDistance'>500m from center</span>
+              <span className='rFeatures'>
+                21m² værelse ‧ 1 badeværelse ‧ 1 stor seng ‧ 1 køjeseng
               </span>
-              <span className='sCancel'>Free Cancellation</span>
-              <span className='sCancelSub'>
-                  You can cancel later, so lock in this great price today!
+              <span className='rSubtitle'>Hyggeligt værelse med en 120x200 boksmadras, to køjesenge på 80x200, skrivebord og stol, skab med bøjlestang, eget badeværelse med bruser. Pris ved 2 personer.</span>
+              <span className='rCancel'>Gratis Afbestilling</span>
+              <span className='rCancelSub'>
+                Afbestil senere, reservere prisen i dag!
               </span>
             </div>
-            <div className="sDetails">
-              <div className="sRating">
+            <div className="rDetails">
+              <div className="rRating">
                   <button>8.9</button>
               </div>
-              <div className="sDetailtxt">
-                  <span className='sPrice'>$123</span>
-                  <span className='sTax'>Includes taxes and fees</span>
-                  <button className='sBtn'>See Availability</button>
+              <div className="rDetailtxt">
+                  <span className='rPrice'>595DKK</span>
+                  <span className='rTax'>Inc. moms og gebyr</span>
+                  <button className='rBtn'>Se Tilgængelighed</button>
               </div>
             </div>
           </div>
         </div>
 
         <div className={`mySlides fade ${slideIndex === 3 ? 'active' : ''}`}>
-          <div className="searchItem">
+          <div className="roomItem">
             <img src='assets/Billeder/Vandrerhjem/1000225320.jpg' className='w-52 h-52' alt='Slide 1' />
-            <div className="sDesc">
-              <h1 className="sTitle">Tower Street Apartment</h1>
-              <span className='sDistance'>500m from center</span>
-              <span className='sSubtitle'>Studio Apartment with Air conditioning</span>
-              <span className='sFeatures'>
-                  Entire studio ‧ 1 bathroom ‧ 21m² 1 full bed
+            <div className="rDesc">
+              <h1 className="rTitle">3 Personer med eget bad</h1>
+              <span className='rDistance'>500m from center</span>
+              <span className='rFeatures'>
+                21m² værelse ‧ 1 badværelse ‧ 1 stor seng ‧ 1 køjeseng
               </span>
-              <span className='sCancel'>Free Cancellation</span>
-              <span className='sCancelSub'>
-                  You can cancel later, so lock in this great price today!
+              <span className='rSubtitle'>Hyggeligt værelse med en 120x200 boksmadras, to køjesenge på 80x200, skrivebord og stol, skab med bøjlestang, eget badeværelse med bruser. Pris ved 3 personer.</span>
+              <span className='rCancel'>Gratis Afbestilling</span>
+              <span className='rCancelSub'>
+                Afbestil senere, reservere prisen i dag!
               </span>
             </div>
-            <div className="sDetails">
-              <div className="sRating">
+            <div className="rDetails">
+              <div className="rRating">
                   <button>8.9</button>
               </div>
-              <div className="sDetailtxt">
-                  <span className='sPrice'>$123</span>
-                  <span className='sTax'>Includes taxes and fees</span>
-                  <button className='sBtn'>See Availability</button>
+              <div className="rDetailtxt">
+                  <span className='rPrice'>695DKK</span>
+                  <span className='rTax'>Inc. moms og gebyr</span>
+                  <button className='rBtn'>Se Tilgængelighed</button>
               </div>
             </div>
           </div>
         </div>
 
         <div className={`mySlides fade ${slideIndex === 4 ? 'active' : ''}`}>
-          <div className="searchItem">
+          <div className="roomItem">
             <img src='assets/Billeder/Vandrerhjem/danhostel-gjerrild.jpg' className='w-52 h-52' alt='Slide 1' />
-            <div className="sDesc">
-              <h1 className="sTitle">Tower Street Apartment</h1>
-              <span className='sDistance'>500m from center</span>
-              <span className='sSubtitle'>Studio Apartment with Air conditioning</span>
-              <span className='sFeatures'>
-                  Entire studio ‧ 1 bathroom ‧ 21m² 1 full bed
+            <div className="rDesc">
+              <h1 className="rTitle">4 Personer med eget bad</h1>
+              <span className='rDistance'>500m from center</span>
+              <span className='rFeatures'>
+                21m² værelse ‧ 1 badværelse ‧ 1 stor seng ‧ 1 køjeseng
               </span>
-              <span className='sCancel'>Free Cancellation</span>
-              <span className='sCancelSub'>
-                  You can cancel later, so lock in this great price today!
+              <span className='rSubtitle'>Hyggeligt værelse med en 120x200 boksmadras, to køjesenge på 80x200, skrivebord og stol, skab med bøjlestang, eget badeværelse med bruser. Pris ved 4 personer.</span>
+              <span className='rCancel'>Gratis Afbestilling</span>
+              <span className='rCancelSub'>
+                Afbestil senere, reservere prisen i dag!
               </span>
             </div>
-            <div className="sDetails">
-              <div className="sRating">
+            <div className="rDetails">
+              <div className="rRating">
                   <button>8.9</button>
               </div>
-              <div className="sDetailtxt">
-                  <span className='sPrice'>$123</span>
-                  <span className='sTax'>Includes taxes and fees</span>
-                  <button className='sBtn'>See Availability</button>
+              <div className="rDetailtxt">
+                  <span className='rPrice'>795DKK</span>
+                  <span className='rTax'>Inc. moms og gebyr</span>
+                  <button className='rBtn'>Se Tilgængelighed</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={`mySlides fade ${slideIndex === 4 ? 'active' : ''}`}>
+          <div className="roomItem">
+            <img src='assets/Billeder/Vandrerhjem/danhostel-gjerrild.jpg' className='w-52 h-52' alt='Slide 1' />
+            <div className="rDesc">
+              <h1 className="rTitle">5 Personer med eget bad</h1>
+              <span className='rDistance'>500m from center</span>
+              <span className='rFeatures'>
+                21m² værelse ‧ 1 badværelse ‧ 1 stor seng ‧ 2 køjeseng
+              </span>
+              <span className='rSubtitle'>Hyggeligt værelse med en 120x200 boksmadras, to køjesenge på 80x200, skrivebord og stol, skab med bøjlestang, eget badeværelse med bruser. Pris ved 5 personer.</span>
+              <span className='rCancel'>Gratis Afbestilling</span>
+              <span className='rCancelSub'>
+                Afbestil senere, reservere prisen i dag!
+              </span>
+            </div>
+            <div className="rDetails">
+              <div className="rRating">
+                  <button>8.9</button>
+              </div>
+              <div className="rDetailtxt">
+                  <span className='rPrice'>995DKK</span>
+                  <span className='rTax'>Inc. moms og gebyr</span>
+                  <button className='rBtn'>Se Tilgængelighed</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={`mySlides fade ${slideIndex === 4 ? 'active' : ''}`}>
+          <div className="roomItem">
+            <img src='assets/Billeder/Vandrerhjem/danhostel-gjerrild.jpg' className='w-52 h-52' alt='Slide 1' />
+            <div className="rDesc">
+              <h1 className="rTitle">1 Person med fælles bad</h1>
+              <span className='rDistance'>500m from center</span>
+              <span className='rFeatures'>
+                21m² værelse ‧ 1 badværelse ‧ 1 stor seng
+              </span>
+              <span className='rCancel'>Gratis Afbestilling</span>
+              <span className='rCancelSub'>
+                Afbestil senere, reservere prisen i dag!
+              </span>
+            </div>
+            <div className="rDetails">
+              <div className="rRating">
+                  <button>8.9</button>
+              </div>
+              <div className="rDetailtxt">
+                  <span className='rPrice'>445DKK</span>
+                  <span className='rTax'>Inc. moms og gebyr</span>
+                  <button className='rBtn'>Se Tilgængelighed</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={`mySlides fade ${slideIndex === 4 ? 'active' : ''}`}>
+          <div className="roomItem">
+            <img src='assets/Billeder/Vandrerhjem/danhostel-gjerrild.jpg' className='w-52 h-52' alt='Slide 1' />
+            <div className="rDesc">
+              <h1 className="rTitle">2 Personer med fælles bad</h1>
+              <span className='rDistance'>500m from center</span>
+              <span className='rFeatures'>
+                21m² værelse ‧ 1 badværelse ‧ 1 stor seng
+              </span>
+              <span className='rCancel'>Gratis Afbestilling</span>
+              <span className='rCancelSub'>
+                Afbestil senere, reservere prisen i dag!
+              </span>
+            </div>
+            <div className="rDetails">
+              <div className="rRating">
+                  <button>8.9</button>
+              </div>
+              <div className="rDetailtxt">
+                  <span className='rPrice'>545DKK</span>
+                  <span className='rTax'>Inc. moms og gebyr</span>
+                  <button className='rBtn'>Se Tilgængelighed</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={`mySlides fade ${slideIndex === 4 ? 'active' : ''}`}>
+          <div className="roomItem">
+            <img src='assets/Billeder/Vandrerhjem/danhostel-gjerrild.jpg' className='w-52 h-52' alt='Slide 1' />
+            <div className="rDesc">
+              <h1 className="rTitle">3 Personer med fælles bad</h1>
+              <span className='rDistance'>500m from center</span>
+              <span className='rFeatures'>
+                21m² værelse ‧ 1 badværelse ‧ 1 stor seng ‧ 1 køjeseng
+              </span>
+              <span className='rCancel'>Gratis Afbestilling</span>
+              <span className='rCancelSub'>
+                Afbestil senere, reservere prisen i dag!
+              </span>
+            </div>
+            <div className="rDetails">
+              <div className="rRating">
+                  <button>8.9</button>
+              </div>
+              <div className="rDetailtxt">
+                  <span className='rPrice'>645DKK</span>
+                  <span className='rTax'>Inc. moms og gebyr</span>
+                  <button className='rBtn'>Se Tilgængelighed</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={`mySlides fade ${slideIndex === 4 ? 'active' : ''}`}>
+          <div className="roomItem">
+            <img src='assets/Billeder/Vandrerhjem/danhostel-gjerrild.jpg' className='w-52 h-52' alt='Slide 1' />
+            <div className="rDesc">
+              <h1 className="rTitle">4 Personer med fælles bad</h1>
+              <span className='rDistance'>500m from center</span>
+              <span className='rFeatures'>
+                21m² værelse ‧ 1 badværelse ‧ 1 stor seng ‧ 1 køjeseng
+              </span>
+              <span className='rCancel'>Gratis Afbestilling</span>
+              <span className='rCancelSub'>
+                Afbestil senere, reservere prisen i dag!
+              </span>
+            </div>
+            <div className="rDetails">
+              <div className="rRating">
+                  <button>8.9</button>
+              </div>
+              <div className="rDetailtxt">
+                  <span className='rPrice'>745DKK</span>
+                  <span className='rTax'>Inc. moms og gebyr</span>
+                  <button className='rBtn'>Se Tilgængelighed</button>
               </div>
             </div>
           </div>

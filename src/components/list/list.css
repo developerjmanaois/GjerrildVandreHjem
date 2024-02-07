@@ -1,7 +1,7 @@
 .listContainer {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .listWrapper {
@@ -12,7 +12,7 @@
 }
 
 .listSearch {
-    background-color: #febb02;
+    background-color: #ffb235;
     padding: 10px;
     border-radius: 10px;
     position: sticky;
@@ -67,16 +67,18 @@
 
 .optionInput {
     width: 50px;
+    padding: 0px 5px;
 }
 
 .listSearch>button {
     padding: 10px;
-    background-color: #0071c2;
+    background-color: rgb(0, 139, 222);
     color: white;
     border: none;
     width: 100%;
     font-weight: 500;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .listResult {

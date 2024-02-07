@@ -9,7 +9,7 @@ const Aktiviteter1 = () => {
   const { data, isLoading, error, makeRequest } = useRequestData();
 
   useEffect(() => {
-    makeRequest("https://api.airtable.com/v0/appdVuqpV8gkE6Oz1/aktiviteter", 
+    makeRequest("https://api.airtable.com/v0/appdVuqpV8gkE6Oz1/Aktiviteter?filterByFormula=NOT%28%7BName%7D%20%3D%20%27%27%29", 
     "GET", null, {
       'Authorization': "Bearer " + import.meta.env.VITE_APP_AIRTABLEAPIKEY
     });
@@ -28,9 +28,9 @@ const Aktiviteter1 = () => {
 
       return data.records.slice(0, 6).map((record, index) => {
         const imageUrl = record.fields.image?.[0]?.url;
-        const title = titles[index];
-        const baseTitle = title.split(' ')[0].toLowerCase();
-        const destinationRoute = `/${baseTitle}`;
+        const title = record.fields.Name;
+        const link = record.fields.links;
+        const destinationRoute = link;
      
         return (
 

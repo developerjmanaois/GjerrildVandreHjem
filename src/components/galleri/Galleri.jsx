@@ -32,9 +32,9 @@ const Galleri = () => {
         let newSlideNumber;
       
         if (direction === "l") {
-          newSlideNumber = slideNumber === 0 ? 9 : slideNumber -1;
+          newSlideNumber = slideNumber === 0 ? 8 : slideNumber -1;
         }else {
-          newSlideNumber = slideNumber === 9 ? 0 : slideNumber +1;
+          newSlideNumber = slideNumber === 8 ? 0 : slideNumber +1;
         }
     
       
