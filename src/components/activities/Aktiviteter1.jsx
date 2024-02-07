@@ -33,7 +33,6 @@ const Aktiviteter1 = () => {
         const destinationRoute = link;
      
         return (
-
             <Link to={destinationRoute} key={index} className="flex justify-center mb-8">
               <div className="relative w-full h-64 bg-cover bg-center rounded-lg shadow-lg overflow-hidden transition duration-500 ease-in-out transform hover:scale-105" style={{ backgroundImage: `url(${imageUrl})` }}>
               

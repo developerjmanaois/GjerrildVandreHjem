@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className='text-md font-semibold mb-3'>Nyttig Links</h3>
+            <h3 className='text-md font-semibold mb-3'>Nyttige Links</h3>
             <div className='flex items-center gap-2 text-xs'>
               <a href="#">Events</a>
             </div> 

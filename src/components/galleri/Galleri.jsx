@@ -44,6 +44,7 @@ const Galleri = () => {
       
   return (
     <div className="hotelContainer">
+      <h1 className='text-2xl font-extrabold mb-6'>VANDRERHJEMMET'S GALLERI</h1>
       { open && data.records && data.records.length > -1 && ( 
         <div className="slider">
           <IoCloseCircleOutline className='close' onClick={() => setOpen(false)}/>
