@@ -9,7 +9,6 @@ import Layout from './layout/Layout'
 import LayoutAdmin from './Layout/ADMIN/LayoutAdmin'
 import HomeAdmin from './views/ADMIN/HomeAdmin'
 import Nyheder from './views/Nyheder';
-import Data from './views/Data';
 import Aktiviteter from './views/Aktiviteter';
 import Kattegatcentret from './components/activities/Kattegatcentret';
 import Djurssommerland from './components/activities/Djurssommerland';
@@ -43,7 +42,6 @@ function App () {
            <Route path="reepark" element={ <Reepark/> } />
            <Route path="skandinavisk" element={ <Skandinavisk/> } />
            <Route path="restaurant" element={ <Restaurant /> } />
-          <Route path="data" element={ <Data /> } />
           <Route path="*" element={ <NoMatch /> } />
         </Route>
 

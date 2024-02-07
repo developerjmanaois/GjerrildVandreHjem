@@ -257,12 +257,6 @@ const SearchItem = () => {
           </div>
         
         </div>
-        <a className='prev' onClick={() => plusSlides(-1)}>
-          ❮
-        </a>
-        <a className='next' onClick={() => plusSlides(1)}>
-          ❯
-        </a>
       </div>
     </div>
   )

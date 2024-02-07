@@ -34,7 +34,7 @@ const Header = ({type}) => {
     }, [] )
 
     const headerItems = [
-        { id: 1, icon: <FaBed className='icon' />, href: '/list', label: 'Værelse' },
+        { id: 1, icon: <FaBed className='icon' />, href: '/list', label: 'Værelser' },
         { id: 2, icon: <RiRestaurantLine className='icon' />, href: '/restaurant', label: 'Restaurant' },
         { id: 3, icon: <MdOutlineLocalActivity className='icon' />, href: '/aktiviteter', label: 'Aktiviteter' },
         { id: 4, icon: <MdOutlineEmojiEvents className='icon'/>, href: '/events', label: 'Events' },
@@ -117,7 +117,7 @@ const Header = ({type}) => {
                     <div className="headerSearch">
                         <div className="headerSearchItem">
                             <FaBed className='headerIcon'/>
-                            <span className='headerSearchText text-xs'>Tjekke tilgængelighed</span>
+                            <span className='headerSearchText text-xs'>Tjek tilgængelighed</span>
                         </div>
                         <div className="headerSearchItem">
                             <FaRegCalendarAlt className='headerIcon'/>
