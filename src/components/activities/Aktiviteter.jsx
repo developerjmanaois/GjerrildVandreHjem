@@ -9,7 +9,7 @@ const Aktiviteter = () => {
   const { data, isLoading, error, makeRequest } = useRequestData();
 
   useEffect(() => {
-    makeRequest("https://api.airtable.com/v0/appdVuqpV8gkE6Oz1/aktiviteter", 
+    makeRequest("https://api.airtable.com/v0/appdVuqpV8gkE6Oz1/aktiviteter?filterByFormula=Id", 
     "GET", null, {
       'Authorization': "Bearer " + import.meta.env.VITE_APP_AIRTABLEAPIKEY
     });

@@ -1,0 +1,53 @@
+.restaurant-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.restaurant-card {
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.restaurant-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.restaurant-description {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.food-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.food-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.food-image:hover {
+    transform: scale(1.05);
+}
