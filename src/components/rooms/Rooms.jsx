@@ -46,6 +46,7 @@ const Rooms = () => {
   return (
     <div>
       <div className='slideshow-container'>
+        <h1 className='text-2xl font-extrabold mb-6 text-center uppercase'>ledig værelser</h1>
       { isLoading && <Loader/> }
       { error && <Error /> }
         <div className={`mySlides fade ${slideIndex === 1 ? 'active' : ''}`}>
