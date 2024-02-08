@@ -18,7 +18,7 @@ const Navbar = () => {
       </div>
       <div className='flex gap-6 items-center uppercase text-sm'>
         <div className='mr-6'>
-          <button className='px-4 py-1 rounded uppercase navBtn text-slate-500 text-xs'>
+          <button className='px-4 py-2 rounded uppercase navBtn text-slate-500 text-xs'>
             <Link to="/list">Bestil online</Link>
           </button>
         </div>
