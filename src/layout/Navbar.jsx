@@ -22,7 +22,7 @@ const Navbar = () => {
             <Link to="/list">Bestil online</Link>
           </button>
         </div>
-        <div className='flex justify-center items-center border border-solid px-1'>
+        <div className='flex justify-center items-center border border-solid px-1 py-1'>
           <div className='flex items-center'>
             <SlGlobe className='text-xs'/>
             <div>
