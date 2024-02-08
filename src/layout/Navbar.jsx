@@ -18,11 +18,11 @@ const Navbar = () => {
       </div>
       <div className='flex gap-6 items-center uppercase text-sm'>
         <div className='mr-6'>
-          <button className='px-4 py-1 rounded uppercase navBtn text-slate-500'>
+          <button className='px-4 py-1 rounded uppercase navBtn text-slate-500 text-xs'>
             <Link to="/list">Bestil online</Link>
           </button>
         </div>
-        <div className='flex justify-center items-center border border-solid py-1 px-2'>
+        <div className='flex justify-center items-center border border-solid px-1'>
           <div className='flex items-center'>
             <SlGlobe className='text-xs'/>
             <div>
