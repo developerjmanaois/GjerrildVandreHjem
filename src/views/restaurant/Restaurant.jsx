@@ -60,12 +60,12 @@ const Restaurant = () => {
         </p>
       </div>
       { open && data.records && data.records.length > -1 && ( 
-        <div className="slider">
-          <IoCloseCircleOutline className='close' onClick={() => setOpen(false)}/>
-          <FaRegArrowAltCircleLeft className='arrow' onClick={() => handleMove("l")}/>
-          <div className="sliderWrapper">
+        <div className="rSlider">
+          <IoCloseCircleOutline className='rClose' onClick={() => setOpen(false)}/>
+          <FaRegArrowAltCircleLeft className='rArrow' onClick={() => handleMove("l")}/>
+          <div className="rSliderWrapper">
             {data.records[slideNumber]?.fields.image && (
-              <img src={data.records[slideNumber].fields.image[0].url} alt="" className='sliderImg bg-contain bg-center modal-content' />
+              <img src={data.records[slideNumber].fields.image[0].url} alt="" className='rSliderImg bg-contain bg-center modal-content' />
             )}
           </div>
           <FaRegArrowAltCircleRight className='arrow' onClick={() => handleMove("r")}/>
